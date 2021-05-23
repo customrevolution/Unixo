@@ -48,7 +48,7 @@
     transform: translate(-50%, -10%);
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 50px !important; 
+    font-size: 35px !important; 
     font-weight: 600;
 
     color: white;
@@ -186,6 +186,11 @@
         max-width: 550px;
     }
 
+    .themeTitle {
+
+        font-size: 50px !important; 
+
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */

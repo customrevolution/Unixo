@@ -16,7 +16,7 @@
 }
   
   .carousel-caption h1 {
-    font-size: 80px;
+    font-size: 60px;
     text-shadow: 1px 1px 30px #000;
 }
   
@@ -75,7 +75,10 @@
 }
 
 @media (min-width: 1200px) {
-  
+  .carousel-caption h1 {
+    font-size: 80px;
+    text-shadow: 1px 1px 30px #000;
+}
 }
 
 /* Buttons */
