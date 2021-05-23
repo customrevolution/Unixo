@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row collectionRow">
+        <div class="col-12">
+            <img src="<%= collection.images[0]%>" alt="" class="img-fluid">
+            <div class="collectionHeader">
+                <div class="collectionHeaderWrapper ">
+                    <h2>Collection</h2>
+                    <h1>
+                        <%=collection.name%>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row collectionTypeHeader">
+        <div class="col-12">
+            <h2 class="text-center shopItemType">Nike Air Force 1</h2>
+        </div>
+
+        <div class="col-12 text-center collectionCountdownHeader">
+            <h3>Hurry up!</h3>
+            <p>The collection ends soon!</p>
+        </div>
+
+        <div class="col-10 collectionCountdown p-0 d-flex mx-auto">
+            <div class=" my-auto mx-auto">
+                <p class="collectionTimer"></p>
+                <p class="collectionTimerText text-center"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row collectionItemsRow">
+
+        <% for (let i=0; i < collection.kicks.length; i++) { %>
+            <div class="col-12 col-md-6 col-xl-4 shopItem mx-auto" data-aos="fade-left" data-aos-delay="<%=50*i%>">
+                <a href="/shop/collections/<%=collection.collectionId%>/<%=collection.kicks[i].shopId%>">
+
+                    <div class="shopItemWrapper p-0 m-0">
+                        <img src="<%=collection.kicks[i].image[0]%>" alt="" class="img-fluid shopItemImage">
+                        <h2 class="shopItemTitle text-center">
+                            AIR FORCE 1 LOW <br>
+                            <%=collection.kicks[i].name.toUpperCase()%>
+                        </h2>
+                        <span class="shopItemLine"></span>
+                        <h3 class="shopItemDescription text-center">
+                            <%=collection.kicks[i].shopDescription%>
+                        </h3>
+                        <div class="shopItemPrice">
+                            <span>
+                                <%=collection.kicks[i].price%> лв.
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <% }%>
+
+                <!-- % for (let i=0; i < collection.kicks.length; i++) { %>
+            <div class="col-12 col-md-6 col-xl-4 shopItem mx-auto ">
+                <img src="%=collection.kicks[i].image%>" alt="" class="img-fluid">
+                <div class="shopItemPrice">
+                    <span>
+                        %=collection.kicks[i].price%> лв.
+                    </span>
+                </div>
+            </div>
+            % }%> -->
+    </div>
+
+    <style>
+        ::selection {
+            color: rgb(128, 193, 255);
+            background-color: rgb(0, 0, 0);
+        }
+    </style>

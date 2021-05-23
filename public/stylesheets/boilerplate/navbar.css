@@ -1,0 +1,785 @@
+
+body {
+    background-color: #381292;
+}
+
+.overflow-hidden1 {
+    overflow: hidden
+}
+
+.navWrapper a {
+    text-decoration: none;
+}
+.navWrapper a:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-dark .navbarLink {
+    color: white !important;
+}
+
+.navbar-dark .navbarClickable:hover{
+    color: white;
+}
+
+.navbar-dark .navbarClickable::after {
+	background: white;
+} 
+
+.navWrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {  
+    font-size: 1rem;
+    visibility: hidden;
+    background-color: rgb(28, 27, 27);
+    width: 0;
+    /* width:80vw; */
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+    z-index: 9999;
+    align-items: normal !important;
+    overflow: hidden;
+    /* overflow-y: auto; */
+}
+
+.overlay {
+    display: none !important;
+    position: fixed;
+    width: 100vw;
+    height: 200vh;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: 998;
+    transition: opacity 3s ease-in-out !important;
+}
+
+.overlayActive {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.sidebarActive {
+    visibility: visible !important;
+}
+
+.fixed-position {
+    position: fixed;
+}
+
+
+.sidebarBrand {
+    color: white;
+    margin: 0;
+    padding: 0;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: inline-flex;
+    letter-spacing: 4px;
+}
+
+.sidebarRowMain {
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+
+    opacity: 0;
+}
+
+.sidebarRowBrand {
+
+    opacity: 0;
+}
+
+.sidebarRowActive {
+    transition: opacity 0.25s ease-in-out;
+    opacity: 1;
+}
+
+.sidebarRowCloseActive {
+    transition: opacity 0.25s ease-in-out !important;
+}
+
+.sidebarRowMain .col-12{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.sidebarNavMain {
+    padding: 0;
+    margin: 0;
+    align-items: normal !important;
+}
+
+.sidebarClose {
+    display: inline-flex;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 28px;
+    left: 5%;
+    transition: color 0.3s;
+    background: none;
+	border: none;
+	padding: 0;
+}
+
+.sidebarClose:focus {
+	outline: none;
+}
+
+.sidebarClose:hover {
+    color: #b32a2a;
+    text-decoration: none;
+}
+
+.sidebarColBrand {
+    padding-top: 19px;
+}
+
+.sidebarBrand {
+    letter-spacing: 4px;
+}
+
+.sidebarHrTop {
+    border-bottom: 0.1px solid rgb(71, 71, 71);
+    margin: 0;
+    margin-bottom: 1.5vh;
+    margin-left: -5%;
+    margin-right: -5%;
+}
+
+.sidebarHr {
+    border-bottom: 0.1px solid rgb(71, 71, 71);
+    margin: 0;
+    margin-top: 1.5vh;
+}
+
+.sidebarButton {
+    /* margin-bottom: 15px; */
+    margin-bottom: 1.5vh;
+}
+
+.sidebarLink {
+    text-transform: uppercase;
+    /* font-size: 12px; */
+    font-size: 0.7rem;
+    letter-spacing: 2.4px;
+    /* color: rgb(37, 37, 37); */
+    color: rgb(255, 255, 255);
+    text-decoration: none !important;
+    transition: color 0.3s;
+}
+
+.sidebarLink:hover {
+    color: #775cb8;
+    text-decoration: none !important;
+}
+
+.sidebarLinkList {
+    /* margin-top: 12.5px; */
+    margin-top: 1.5vh;
+    margin-left: 0px;
+    list-style-type: none;
+	padding: 0;
+}
+
+.sidebarLinkList {
+    list-style-type: none;
+	padding: 0;
+}
+
+.sidebarIcon {
+    display: inline-block;
+}
+
+.sidebarIcon a {
+    /* color: rgb(17, 17, 17); */
+    color: #b9b9b9;
+    /* color: #888888; */
+    /* font-size: 20px; */
+    font-size: 1.3rem;
+}
+
+
+.sidebarIcon .fa-instagram:hover {
+	color:rgb(158, 47, 47)!important;
+}
+
+.sidebarClickable {
+    /* color: #888888; */
+    color: #b9b9b9 !important;
+	display: inline-block;
+}
+
+.sidebarClickable:hover {
+    color: white !important;
+}
+
+.sidebarClickable::after {
+	content: '';
+	width: 0px;
+	height: 1px;
+	display: block;
+    background: rgb(255, 255, 255);
+    
+	transition: 0.3s;
+	margin-top: -4px;
+}
+
+.sidebarClickable:hover::after {
+	width: 100%;
+  }
+
+.sidebarMargin {
+    /* margin-top: 12.5px; */
+    margin-top: 1vh;
+}
+
+.sidebarText {
+    /* color: #616161; */
+    color: #888888;
+    font-size: 12px;
+}
+
+.sidebarFindUs {
+    margin-top: 20px;
+    margin-bottom: 14px;
+}
+
+.sidebarSocial {
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbarMenu {
+    display: none !important;
+}
+
+.navbarShop {
+    margin-top: 2.5px !important;
+    display: none !important;
+}
+
+.navbarCart {
+
+}
+
+
+
+
+
+
+
+
+
+.buttonHelp {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    margin-left: 25px;
+    padding-top: 3px;
+}
+
+.buttonAccount {
+    background-color: rgb(224, 235, 255);
+    /* background-color: rgb(214, 191, 255); */
+    height: 40px !important;
+    border-radius: 6px;
+    transition: all 0.4s;
+
+}
+
+.buttonAccount p { 
+    padding-top: 6px;
+    padding-left: 8px;
+    padding-right: 12px;
+    color: black;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.buttonAccount img { 
+    padding-top: 7px;
+    padding-left: 10px;
+    width: 32px;
+}
+
+.navbarProfileOptions {
+    width: 260px;
+    height: 100%;
+    background-color: rgb(224, 235, 255);
+    color: black;
+    display: none;
+    /* background-color: rgb(214, 191, 255); */
+}
+
+.navbarProfileOptionFirst {
+    margin-top: 15px;
+    /* border-top: 1px solid black; */
+}
+
+.navbarProfileOptionLast {
+    /* border-bottom: none !important; */
+}
+
+.navbarProfileOption {
+    height: 50px;
+    padding: 10px 0px;
+    /* border-bottom: 1px solid black; */
+    /* border-top: 1px solid black; */
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 1.5px 1.5px rgb(218, 218, 218); */
+    transition: all 0.2s ease-out;
+    border: 1.5px solid transparent;
+}
+
+.navbarProfileOption:hover {
+    cursor: pointer;
+    border: 1.5px solid black;
+}
+
+.navbarProfileOptionIcon {
+    width: 25px;
+    position: absolute;
+    top: 30%;
+    left: 7%;
+}
+
+.navbarProfileOptionIconOrder {
+    width: 32px;
+    top: 20%;
+    left: 6%;
+}
+
+.navbarProfileOptionIconPromo {
+    width: 26px;
+    top: 24%;
+    left: 7%;
+}
+
+.navbarProfileOptionLogout {
+    left: 8%;
+    top: 25%;
+}
+
+.navbarProfileOption h3{
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.tippy-box[data-theme~='purple'] {
+    background-color: rgb(224, 235, 255);
+    border-radius: 12px;
+    border-top-right-radius: 0;
+}
+
+
+
+
+
+
+
+
+.navbar {
+    height: 85px;
+    padding: 0;
+    z-index: 990;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar-border {
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.navbar-border-dark {
+    border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+.bg-light {
+    background-color: white !important;
+}
+
+#cont1 {
+    height: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#cont1 .row {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding-right: 25px;
+    padding-left: 25px;
+    /* margin-left: 16px; */
+}
+
+#cont1 .row .col-5{
+    padding: 0;
+}
+
+#cont1 .row .col-2{
+    padding: 0;
+}
+
+.navbarLinkList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbarListItem {
+    display: inline-block;
+}
+
+.navbarLink {
+    /* padding-bottom: 34px; */
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    color: rgb(37, 37, 37);
+    text-decoration: none !important;
+    transition: all 0.3s ease-in-out;
+} 
+
+
+.navbar-brand {
+    transition: all 0.3s ease-in-out;
+
+    font-size: 20px;
+    letter-spacing: 0px;
+}
+
+.navbarDropDown {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.navbarDropDown img {
+    width: 30px;
+}
+
+.navbarDropDown:focus {
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbarClickable {
+    display: inline-block;
+    padding-bottom: 0px;
+    margin-top: 35px;
+}
+
+.navbarClickable:hover {
+    color: black;
+}
+
+.navbarClickable::after {
+	content: '';
+	width: 0px;
+	height: 2px;
+	display: block;
+	background: black;
+	transition: 0.3s;
+	margin-top: 28.5px;
+}
+
+.navbarClickable:hover::after {
+	width: 100%;
+  }
+
+
+
+
+
+.sidebarFormEmail {
+    display: inline-block;
+    margin: 0;
+    padding-left: 2.5%;
+    height: 40px !important;
+    font-size: 0.7rem;
+    width: 67%;
+	font-weight: 400;
+	line-height: 23px;
+	color: black;
+	letter-spacing: 1.5px;
+    border: 1px solid black;
+	transition: border 0.1s ease-in-out;
+}
+
+.sidebarFormEmail:focus {
+	box-shadow: none;
+	outline: none;
+}
+
+/* Button */
+  
+.buttonSubmitSidebar {
+    display: inline-flex;
+    height: 40px;
+    width:31%;
+    border: 1px solid rgb(28, 27, 27);
+    margin-left: -5px;
+    margin-top: 2px;
+    padding: 0;
+    font-size: 12px;
+    color: rgb(28, 27, 27);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+ 
+  #buttonSubmitSidebar2 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #381292;
+  }
+  
+  #buttonSubmitSidebar2 span {
+    position: relative;
+    transition: all .35s ease-Out;
+    color: white;
+    font-weight: 600;
+    /* letter-spacing: 2.4px; */
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+
+  
+  #slideSubmitSidebar {
+    width: 100%;
+    height: 100%;
+    /* left: -200px; */
+    left: -230px;
+    /* background: #BFC0C0; */
+    background: white;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #buttonSubmitSidebar2:hover #slideSubmitSidebar {
+    left: 0;
+  }
+  
+  #buttonSubmitSidebar2:hover span {
+    /* color: #2D3142; */
+    color: black;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 500px) { 
+    .navbar-brand {
+        
+        letter-spacing: 4px;
+    }
+}
+
+
+@media (min-width: 576px) { 
+    .sidebarFormEmail {
+        letter-spacing: 1.5px;
+    }
+  
+    .buttonSubmitSidebar2 a {
+        letter-spacing: 0px;
+    }
+
+        
+    .navbar-brand {
+        font-size: 30px;
+        letter-spacing: 4px;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+        
+}
+
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+    #cont1 .row {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    
+    .navbarMenu {
+        display: inline-flex !important;
+    }
+
+    .navbarShop {
+        display: inline-flex !important;
+    }
+
+    .navbarCart {
+        display: none !important;
+    }
+
+    .navbarDropDown {
+        display: none !important;
+    }
+   
+
+    #navbarCol3 {
+        height: 50%;
+    }
+
+}
+
+.buttonHelp {
+    position: relative;
+}
+
+.cartItemsNumber {
+    position: absolute;
+    top: 105%;
+    left: 60%  ;
+    height: 13px;
+    width: 13px;
+    color: red;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 2px 2px rgb(255, 0, 0);
+}
+
+.cartItemsNumberMobile {
+    position: absolute;
+    top: 75%;
+    left: 60%  ;
+    height: 13px;
+    width: 13px;
+    color: red;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 2px 2px rgb(255, 0, 0);
+}
+
+.cartItemsNumberTextMobile {
+    position: absolute;
+    color: white;
+    top: 67.5%;
+    left: 70%;
+    font-size: 10px;
+    z-index: 2;
+}
+
+.cartItemsNumberText {
+    position: absolute;
+    color: white;
+    top: 95%;
+    left: 70%;
+    font-size: 10px;
+    z-index: 2;
+}
+
+.alert {
+    margin-top: 10px;
+}
+
+.shopShowDetails h1 {
+    margin-top: 10px !important;
+}
+
+.showKickPriceCont {
+    padding-top: 25px !important;
+}

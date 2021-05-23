@@ -1,0 +1,390 @@
+#cont3 {
+    padding: 0;
+    margin: 0;
+    /* margin-top: 80px; */
+}
+
+#cont3Row1 {
+    background: #fae588;
+    /* background: #dbc4ff; */
+    /* background: #acc7ee; */
+    /* #c4e7f3 */
+    /* height: 552px; */
+    height: 590px;
+    width:100%;
+    margin: 0;
+}
+
+.cont3Heading {
+    padding: 0;
+    margin-bottom: 20px;
+    
+}
+
+.cont3Heading h3 {
+    color: rgb(28, 27, 27);
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+#cont3Heading2 {
+    display: none;
+}
+
+#cont3ImgDiv {
+    width: 95%;
+}
+
+#cont3Row1Img {
+    width:100%;
+    margin-bottom: 20px;
+}
+
+#cont3Text {
+    width: 95%;
+    margin-left:10px;
+    margin-right:15px;
+    margin-top: 15px;
+}
+
+#cont3Text .lead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgb(28, 27, 27);
+    
+    
+}
+
+
+/* Buttons */
+.button-3 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    /* background: #d6e2e9; */
+    background: #fae588;
+  }
+  
+  .button-3 a {
+    position: relative;
+    transition: all .45s ease-Out;
+    color: black;
+    font-size: 12px;
+    font-weight: 00;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  
+  .circleCS3 {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #1b1b1b;
+    position: absolute;
+    transition: all .5s ease-Out;
+    top: 20px;
+    left: 70px;
+  }
+  
+  .button-3:hover .circleCS3 {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+  }
+  
+  .button-3:hover a {
+    color: white;
+  }
+  
+  .buttonCustom2 {
+    display: inline-flex;
+    height: 40px;
+    width: 137px;
+    border: 1px solid rgb(28, 27, 27);
+    margin-top: 7px;
+    color: rgb(122, 116, 116);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* BUTTON 2 */
+.button-C3 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    /* background: #d6e2e9; */
+    background: #fae588;
+  }
+  
+  .button-C3 a {
+    position: relative;
+    transition: all .45s ease-Out;
+    color: white;
+    font-size: 12px;
+    font-weight: 00;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  
+.circleC3 {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #fae588;
+    position: absolute;
+    transition: all .5s ease-Out;
+    top: 20px;
+    left: 70px;
+  }
+  
+  .button-C3:hover .circleC3 {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+  }
+  
+  .button-C3:hover a {
+    color: black;
+  }
+  
+  .buttonCustomC3 {
+    display: inline-flex;
+    height: 40px;
+    width: 137px;
+    border: 1px solid #1c1b1b;
+    background: #1c1b1b;
+    margin-top: 7px;
+    color: rgb(122, 116, 116);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+  }
+
+
+/* Row 2 */
+
+
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    #cont3ImgDiv {
+        width: 80%;
+    }
+
+    #cont3Text {
+        width: 80%;
+    }
+
+    #cont3Text .lead {
+        line-height: 25px;
+    }
+
+    #cont3Row1 {
+        height: 650px;
+    }
+
+    #cont3Heading1 h3 {
+        font-size: 22.5px;
+    }
+    
+} 
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    #cont3Row1 {
+        height: 500px;
+    }
+
+    #cont3Row1Img {
+        width: 90%;
+        margin: 0;
+    }
+
+    #cont3Text {
+        margin: 0;
+    }
+
+
+    #cont3Text .lead {
+        width: 80%;
+        padding: 0;
+        margin: 0;
+        margin-left: 60px;
+        margin-bottom: 20px;
+        line-height: 25px;
+    }
+
+    .buttonCustom2 {
+        width: 100%;
+        height: 40px;
+        width: 140px;
+        margin-top: 0px;
+        margin-left: 60px;
+        font-size: 12px;
+    }
+
+    .buttonCustomC3 {
+        width: 100%;
+        height: 40px;
+        width: 140px;
+        margin-top: 0px;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+    
+    #cont3Heading1 {
+        display: none;
+    }
+
+    #cont3Heading2 {
+        display: flex;
+    }
+
+    #cont3Heading2 h3 {
+        margin-left: 30px;
+    }
+
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #cont3Row1 {
+        height: 600px;
+    }
+
+    #cont3ImgDiv {
+        max-width: 580px;
+        max-height: 400px;
+    }
+
+    #cont3Row1Img {
+        width: 100%;
+        margin: 0;
+    }
+
+    #cont3Text {
+        margin-top: 50px;
+        margin-left: 60px;
+        margin-bottom: 80px;
+    }
+
+    #cont3Text .lead {
+        /* width: 95%;
+        padding: 0;
+        margin: 0; */
+        width: 80%;
+        padding: 0;
+        margin: 0;
+        margin-left: 30px;
+        line-height: 25px;
+        font-size: 14px;   
+    }
+
+    .buttonCustom2 {
+        width: 100%;
+        height: 45px;
+        width: 145px;
+        margin-top: 25px;
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+    .buttonCustomC3{
+        width: 100%;
+        height: 45px;
+        width: 145px;
+        margin-top: 25px;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+
+    #cont3Heading2 h3 {
+        font-size: 25px;
+        margin: 0;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #cont3Row1 {
+        height: 685px;
+    }
+
+    #cont3ImgDiv {
+        max-width: 706px;
+        max-height: 447px;
+    }
+
+    #cont3Row1Img {
+        width: 100%;
+        margin: 0;
+    }
+
+    #cont3Text {
+        /* margin: 0; */
+        margin-left: 60px;
+        margin-bottom: 80px;
+    }
+
+    #cont3Text .lead{
+        width: 70%;
+        padding: 0;
+        margin: 0;
+        margin-left: 30px;
+        line-height: 25px;
+        font-size: 14px;
+    }
+
+    .buttonCustom2 {
+        width: 85%;
+        height: 45px;
+        width: 160px;
+        margin-top: 25px;
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+    .buttonCustomC3 {
+        width: 85%;
+        height: 45px;
+        width: 160px;
+        margin-top: 25px;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+
+    #cont3Heading2 h3 {
+        display: flex;
+        font-size: 30px;
+        margin: 0;
+    }
+}
+
+

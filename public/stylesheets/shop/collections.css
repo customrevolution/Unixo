@@ -1,0 +1,1039 @@
+.collectionsRow {
+    padding: 0;
+    margin: 0;
+    height: 300vh;
+}
+
+.collectionsRow .col-12 {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.collectionsRow .col-12 img{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover !important;
+    filter: brightness(85%);
+}
+
+.collectionsRow .col-12 h2 {
+    font-size: 100px;
+    font-weight: 800;
+    color: white;
+
+    font-family: 'Roboto Slab';
+}
+
+.collectionTitleTop {
+    position: absolute;
+    top: 15% !important;
+    left: 5% !important;
+}
+
+.collectionTitleTop:hover {
+  text-decoration: none;
+}
+
+.collectionTitleTop h2 {
+    font-size: 40px !important;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 2px black;
+    text-align: center;
+}
+
+.collectionSubTitleTop {
+  position: absolute;
+  top: 63% !important;
+  font-size: 17px !important;
+  line-height: 25px;
+  font-family: 'Montserrat' !important;
+  color: rgb(255, 255, 255);
+  letter-spacing: 5px;
+  font-weight: 600;
+  text-shadow: 0px 0px 3px #000000;
+}
+
+.collectionTitleCenter {
+    position: absolute;
+    top: 4%;
+    
+}
+
+.collectionTitleCenter h2{
+    font-size: 60px !important;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 2px black;
+}
+
+.collectionTitleCenter:hover {
+  text-decoration: none;
+}
+
+.collectionSubTitleCenter {
+  position: absolute;
+  top: 68% !important;
+  font-size: 6vw !important;
+  /* font-size: 20px !important; */
+  line-height: 35px;
+  font-family: 'Montserrat' !important;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  text-shadow: 0px 0px 3px #000000;
+}
+
+.collectionTitleBottom {
+    position: absolute;
+    top: 6% !important;
+    left: 10% !important;
+
+}
+
+.collectionTitleBottom h2 {
+    font-size: 50px !important;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 2px black;
+}
+
+.collectionTitleBottom:hover {
+  text-decoration: none;
+}
+
+.collectionSubTitleBottom {
+    position: absolute;
+    top: 65% !important;
+    left: 2% !important;
+    font-size: 17px !important;
+    line-height: 37.5px;
+    width: 98%;
+    font-family: 'Montserrat' !important;
+    color: rgb(255, 255, 255);
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px #000000;
+}
+
+.collectionExpiration {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 24px;
+    width: 100%;
+    background-color: #141414;
+    border-top-left-radius: 200%;
+    border-top-right-radius: 200%;
+    padding-top: 5px;
+}
+
+.collectionExpirationDate {
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    
+}
+
+.collectionNext {
+  margin-left: 150px;
+}
+
+
+
+.collectionExpirationDesktop {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 30px;
+    width: 100%;
+    background-color: #141414;
+    padding-top: 5px;
+    display: none;
+    z-index: 2;
+    overflow: hidden !important;  
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+
+}
+
+.collectionExpirationDateDesktop{
+  color: white;
+  margin: 0;
+  font-size: 15px;
+  /* transform: translateX(0%);  */
+  animation: scroll-left 1200s linear infinite;
+  overflow: hidden !important;
+  width: 50000px;
+
+}
+
+
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+  0%   {
+  transform: translateX(-11%); 		
+  }
+  100% {
+  transform: translateX(-100%); 
+  }
+ }
+
+
+@media (min-width: 300px) and (min-height:560px) {
+  .collectionSubTitleBottom {
+    top: 67% !important;
+  }
+}
+
+
+@media (min-width: 400px) and (min-height:800px) {
+  .collectionTitletop h2 {
+    font-size: 30px !important;
+  }
+  .collectionTitleCenter h2 {
+    font-size: 30px !important;
+  }
+
+  .collectionSubTitleBottom {
+    top: 70% !important;
+  }
+}
+
+
+@media (min-height: 600px) { 
+  .collectionSubTitleTop {
+    top: 65% !important;
+  }
+
+  .collectionTitleTop h2 {
+    font-size: 47px !important;
+  }
+
+  .collectionExpiration {
+    padding-top: 3px;
+  }
+
+  .collectionExpiration p {
+    font-size: 13px !important;
+  }
+}
+
+
+
+@media (min-height: 790px) { 
+  .collectionExpiration {
+    padding-top: 3.25px !important;
+  }
+
+  .collectionExpiration p {
+    font-size: 13px !important;
+  }
+}
+
+
+@media (min-height: 700px) { 
+  .collectionSubTitleTop {
+    top: 66% !important;
+    font-size: 22px !important;
+  }
+
+  .collectionTitleTop {
+    top: 14% !important;
+  }
+
+  .collectionTitleTop h2 {
+    font-size: 50px !important;
+  }
+}
+
+@media (min-height: 800px) { 
+  .collectionSubTitleTop {
+    top: 66% !important;
+    font-size: 20px !important;
+    line-height: 28px;
+  }
+
+  .buttonViewCollection1 {
+    height: 53px !important;
+    width: 300px !important;
+  }
+}
+
+
+@media (min-width: 350px) { 
+  .collectionSubTitleTop {
+    top: 65% !important;
+    font-size: 18px !important;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 400px) { 
+  .collectionSubTitleTop {
+    top: 66.5% !important;
+    font-size: 22px !important;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 450px) { 
+  .collectionTitleTop h2 {
+    font-size: 60px !important;
+  }
+  .collectionSubTitleTop {
+    font-size: 26px !important;
+    line-height: 32px !important;
+    top: 65.5% !important;
+  }
+
+  .collectionButtonWraper1 {
+    top: 86.5% !important;
+  }
+
+}
+
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  .collectionTitleTop {
+      position: absolute;
+      top: 11% !important;
+  }
+
+  .collectionTitleTop h2 {
+      font-size: 75px !important;
+      letter-spacing: 4px;
+      text-shadow: 3px 3px 2px black;
+  }
+
+  .collectionSubTitleTop {
+    position: absolute;
+    top: 65% !important;
+    font-size: 31px !important;
+    line-height: 40px;
+    font-family: 'Montserrat' !important;
+    color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px #000000;
+  }
+
+    
+  .collectionExpiration {
+    position: absolute;
+    left: 0%;
+    height: 27.5px;
+    padding-top: 4px;
+  }
+
+  .collectionExpirationDate {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+    
+  .collectionButtonWraper1 {
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top: 86%;
+    left: 14%;
+  }
+
+  .buttonViewCollection1 {
+
+    height: 50px;
+    width: 300px;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .collectionSubTitleTop {
+    top: 67% !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .collectionSubTitleTop {
+    top: 69.5% !important;
+  }
+
+  .collectionButtonWraper1 {
+    top: 87% !important;
+  }
+}
+
+@media (min-height: 800px) { 
+  .collectionSubTitleTop {
+    top: 67% !important;
+    font-size: 22px !important;
+    line-height: 30px;
+  }
+
+  .collectionButtonWraper1 {
+    top: 85% !important;
+  }
+}
+
+@media only screen
+  and (min-width: 900px)
+  and (min-height: 1050px){
+
+    .collectionSubTitleTop {
+      font-size: 37.5px !important;
+      top: 80%;
+    }
+
+    .buttonViewCollection1{
+      height: 60px !important;
+      width: 340px !important;
+    }
+    .buttonViewCollection1 a{
+      font-size: 15px !important;
+    }
+
+    .collectionExpiration {
+      height: 32.5px !important;
+      padding-top: 5px !important;
+    }
+    .collectionExpiration p {
+      font-size: 18px !important;
+    }
+}
+@media only screen
+  and (min-width: 900px)
+  and (min-height: 1050px){
+
+    .collectionSubTitleTop {
+      font-size: 37.5px !important;
+      top: 80%;
+    }
+
+    .buttonViewCollection1{
+      height: 60px !important;
+      width: 340px !important;
+    }
+    .buttonViewCollection1 a{
+      font-size: 15px !important;
+    }
+
+    .collectionExpiration {
+      height: 32.5px !important;
+      padding-top: 5px !important;
+    }
+    .collectionExpiration p {
+      font-size: 18px !important;
+    }
+}
+
+@media only screen
+  and (min-width: 400px)
+  and (min-height: 800px){
+
+    .collectionSubTitleCenter {
+      font-size: 6.5vw !important;
+      line-height: 40px !important;
+      top: 70% !important;
+    }
+
+    .collectionTitleCenter h2{
+      font-size: 70px !important;
+    }
+
+    .collectionButtonWraper2 {
+      top: 86% !important;
+    }
+
+    .buttonViewCollection2{
+      height: 45px !important;
+      width: 300px !important;
+    }
+    .buttonViewCollection2 a{
+      font-size: 12px !important;
+    }
+
+}
+
+@media only screen
+  and (min-width: 375px)
+  and (min-height: 810px){
+
+    .collectionSubTitleCenter {
+      font-size: 23px !important;
+      line-height: 40px !important;
+      top: 68% !important;
+    }
+
+    .collectionSubTitleTop {
+      font-size: 23px !important;
+    }
+
+    .collectionTitleTop{
+      top: 10% !important;
+    }
+
+    .collectionTitleCenter h2{
+      font-size: 60px !important;
+    }
+
+    .collectionButtonWraper2 {
+      top: 86% !important;
+    }
+
+    .buttonViewCollection2{
+      height: 50px !important;
+      width: 300px !important;
+    }
+    .buttonViewCollection2 a{
+      font-size: 12px !important;
+    }
+}
+
+
+@media only screen
+  and (min-width: 375px)
+  and (min-height: 810px){
+
+    .collectionSubTitleTop {
+      font-size: 20px !important;
+      line-height: 35px !important;
+      top: 66% !important;
+    }
+
+    .collectionTitleTop h2{
+      font-size: 60px !important;
+    }
+
+    .collectionButtonWraper1 {
+      top: 87% !important;
+    }
+
+    .buttonViewCollection1{
+      height: 50px !important;
+      width: 300px !important;
+    }
+    .buttonViewCollection1 a{
+      font-size: 12px !important;
+    }
+}
+
+@media only screen
+  and (min-width: 375px)
+  and (min-height: 810px){
+
+    .collectionSubTitleBottom {
+      font-size: 5vw !important;
+      line-height: 40px !important;
+      top: 72% !important;
+    }
+
+    .collectionTitleBottom h2{
+      font-size: 60px !important;
+    }
+
+    .collectionButtonWraper3 {
+      top: 87% !important;
+    }
+
+    .buttonViewCollection3{
+      height: 50px !important;
+      width: 300px !important;
+    }
+    .buttonViewCollection3 a{
+      font-size: 12px !important;
+    }
+}
+
+
+@media only screen
+  and (min-width: 1023px)
+  and (min-height: 1300px){
+
+    .collectionSubTitleTop {
+      font-size: 45px !important;
+      line-height: 50px !important;
+      top: 65% !important;
+    }
+
+    .collectionTitleTop h2{
+      font-size: 110px !important;
+    }
+
+    .buttonViewCollection1{
+      height: 90px !important;
+      width: 440px !important;
+    }
+    .buttonViewCollection1 a{
+      font-size: 20px !important;
+    }
+
+    .collectionExpiration {
+      height: 60px !important;
+      padding-top: 5px !important;
+    }
+    .collectionExpiration p {
+      font-size: 24px !important;
+    }
+}
+
+@media only screen
+  and (min-width: 1023px)
+  and (min-height: 1300px){
+
+    .collectionSubTitleCenter {
+      font-size: 55px !important;
+      line-height: 65px !important;
+      top: 70% !important;
+    }
+
+    .collectionTitleCenter h2{
+      font-size: 130px !important;
+    }
+
+    .buttonViewCollection2{
+      height: 90px !important;
+      width: 440px !important;
+    }
+    .buttonViewCollection2 a{
+      font-size: 20px !important;
+    }
+
+}
+
+
+@media only screen
+  and (min-width: 375px)
+  and (min-height: 900px){
+
+    .collectionTitleCenter h2 {
+      font-size: 80px !important;
+    }
+
+    .collectionSubTitleBottom {
+      font-size: 25px !important;
+      line-height: 40px !important;
+      top: 72% !important;
+    }
+
+    .collectionTitleBottom h2{
+      font-size: 70px !important;
+    }
+
+    .collectionButtonWraper3 {
+      top: 87% !important;
+    }
+
+    .buttonViewCollection3{
+      height: 50px !important;
+      width: 300px !important;
+    }
+    .buttonViewCollection3 a{
+      font-size: 12px !important;
+    }
+}
+
+
+@media only screen
+  and (min-width: 375px)
+  and (min-height: 900px){
+
+    .collectionSubTitleCenter {
+      font-size: 30px !important;
+      line-height: 40px !important;
+      top: 68% !important;
+    }
+
+    .collectionSubTitleTop {
+      font-size: 25px !important;
+      top: 70% !important;
+    }
+
+    .collectionTitleTop{
+      top: 10% !important;
+    }
+
+    .collectionTitleTop h2{
+      font-size: 70px !important;
+    }
+
+    .collectionTitleCenter h2{
+      font-size: 70px !important;
+    }
+
+    .collectionButtonWraper2 {
+      top: 86% !important;
+    }
+
+    .buttonViewCollection2{
+      height: 50px !important;
+      width: 300px !important;
+    }
+    .buttonViewCollection2 a{
+      font-size: 12px !important;
+    }
+}
+
+@media only screen
+  and (min-width: 930px)
+  and (min-height: 900px){
+
+    .collectionSubTitleCenter {
+      top: 72% !important;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  .collectionsRow {
+    height: 100vh !important;
+    box-shadow: 0 1px 7.5px 5px rgb(126 126 126);
+  }
+
+  .collectionsCol img {
+    filter: brightness(70%) !important;
+
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .collectionsCol img:hover {
+    filter: brightness(90%) !important;
+  }
+
+  .collectionsCol:hover {
+  
+  }
+
+  .collectionTitleBottom {
+    top: 10% !important;
+  }
+
+  .collectionButtonWraper1 {
+    display: none !important;
+  }
+
+  .collectionButtonWraper2 {
+    display: none !important;
+  }
+
+  .collectionButtonWraper3 {
+    display: none !important;
+  }
+
+  .collectionTitleTop {
+    top: 10% !important;
+  }
+
+  .collectionTitleTop h2{
+    font-size: 60px !important;
+  }
+
+  .collectionTitleCenter {
+    top: 10% !important;
+    width: 40%;
+  }
+
+  .collectionTitleCenter h2{
+    font-size: 70px !important;
+  }
+
+  .collectionSubTitleTop {
+    font-size: 25px !important;
+    top: 72.5% !important;
+  }
+
+  .collectionSubTitleCenter {
+    font-size: 30px !important;
+    text-align: center;
+  }
+
+  .collectionExpiration {
+    display: none;
+  }
+
+  .collectionExpirationDesktop {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Button View Collection 1 */
+
+.collectionButtonWraper1 {
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top: 84%;
+    left: 9.8%;
+}
+
+.buttonViewCollection1 {
+    display: inline-flex;
+    height: 45px;
+    width: 255px;
+    border: 1px solid rgb(28, 27, 27);
+    color: rgb(12, 12, 12);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #buttonViewCollection1-1 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #141414;
+    /* margin: 0; */
+  }
+  
+  #buttonViewCollection1-1 a {
+    position: relative;
+    transition: all .35s ease-Out;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    text-decoration: none;
+  }
+  
+  #buttonViewCollectionSlide1 {
+    width: 100%;
+    height: 100%;
+    /* left: -200px; */
+    left: -375px;
+    /* background: #BFC0C0; */
+    background: white;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #buttonViewCollectionSlide1 {
+    width: 100%;
+    height: 100%;
+    /* left: -200px; */
+    left: -375px;
+    /* background: #BFC0C0; */
+    background: white;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #buttonViewCollection1-1:hover #buttonViewCollectionSlide1 {
+    left: 0;
+  }
+  
+  #buttonViewCollection1-1:hover a {
+    /* color: #2D3142; */
+    color: black;
+  }
+
+
+/* Button View Collection 2 */
+
+.collectionButtonWraper2 {
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top: 86%;
+    left: 9.8%;
+}
+
+.buttonViewCollection2 {
+    display: inline-flex;
+    height: 45px;
+    width: 255px;
+    border: 1px solid rgb(28, 27, 27);
+    color: rgb(12, 12, 12);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #buttonViewCollection2-2 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #141414;
+    /* margin: 0; */
+  }
+  
+  #buttonViewCollection2-2 a {
+    position: relative;
+    transition: all .35s ease-Out;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    text-decoration: none;
+  }
+  
+  #buttonViewCollectionSlide2 {
+    width: 100%;
+    height: 100%;
+    /* left: -200px; */
+    left: -375px;
+    /* background: #BFC0C0; */
+    background: white;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #buttonViewCollectionSlide2 {
+    width: 100%;
+    height: 100%;
+    /* left: -200px; */
+    left: -375px;
+    /* background: #BFC0C0; */
+    background: white;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #buttonViewCollection2-2:hover #buttonViewCollectionSlide2 {
+    left: 0;
+  }
+  
+  #buttonViewCollection2-2:hover a {
+    /* color: #2D3142; */
+    color: black;
+  }
+
+/* Button View Collection 3 */
+
+.collectionButtonWraper3 {
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top: 86%;
+    left: 0%;
+ 
+}
+
+.buttonViewCollection3 {
+    display: inline-flex;
+    height: 45px;
+    width: 255px;
+    left: 8%;
+    border: 1px solid rgb(28, 27, 27);
+    color: rgb(12, 12, 12);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+  }
+
+  #buttonViewCollection3-3 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #141414;
+  }
+  
+  #buttonViewCollection3-3 a {
+    position: relative;
+    transition: all .35s ease-Out;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    text-decoration: none;
+  }
+  
+  #buttonViewCollectionSlide3 {
+    width: 100%;
+    height: 100%;
+    /* left: -200px; */
+    left: -375px;
+    /* background: #BFC0C0; */
+    background: white;
+    position: absolute;
+    transition: all .35s ease-Out;
+    bottom: 0;
+  }
+  
+  #buttonViewCollection3-3:hover #buttonViewCollectionSlide3 {
+    left: 0;
+  }
+  
+  #buttonViewCollection3-3:hover a {
+    /* color: #2D3142; */
+    color: black;
+  }

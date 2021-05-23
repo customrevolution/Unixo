@@ -1,0 +1,113 @@
+.secondWrapper {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+}
+
+.bonuses {
+    margin-top: 30px;
+    width: 100%;
+    /* box-shadow: 0 0 7px rgb(172, 170, 170); */
+    /* border-top: 1px solid rgb(207, 207, 207); */
+    /* border-bottom: 1px solid rgb(207, 207, 207); */
+}
+
+.bonuses .row {
+    max-width: 1200px;
+}
+
+.bonuses .col-sm-4 {
+    border-right: 1px solid  #d8d8d8;
+}
+
+.noBorder .img-fluid {
+    /* margin-top: 20px;
+    padding-top: 20px; */
+    /* border-top: 1px solid #d8d8d8; */
+}
+
+.bonuses .col-sm-4 .img-fluid {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.bonuses .col-sm-4 h3 {
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.noRightBorder {
+    border-right: none !important;
+}
+
+.borderRight {
+    border-right: none !important;
+}
+
+
+
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+    .bonuses .col-sm-4 h3 {
+        font-size: 2vw;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.7rem;
+        margin-bottom: 20px;
+    }
+
+        
+    .borderRight {
+        border-right: 1px solid #d8d8d8 !important;
+    }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 738px) { 
+
+    .bonuses .col-sm-4 h3 {
+        font-size: 15px;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.7rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+        
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .bonuses .col-sm-4 h3 {
+
+        /* font-size: 15px;
+        letter-spacing: 0.3vw;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.7rem;
+        margin-bottom: 20px; */
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* .bonuses .col-sm-4 .img-fluid {
+        margin-top: 10px;
+        width: 250px;
+    } */
+}
+
+

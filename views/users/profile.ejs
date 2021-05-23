@@ -1,0 +1,355 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row m-0 profilePage">
+        <img src="/images/users/register1.jpg" alt="" class="img-fluid">
+    </div>
+
+    <div class="row m-0 profilePage2 justify-content-center">
+        <div class="col-11 profileDetails p-0">
+            <div class="row m-0">
+                <div class="col-6 profileSetting profileSettingData profileSettingActive text-center m-0 p-0"
+                    onclick="location.href='#data'">
+                    <h3>Personal Info</h3>
+                </div>
+
+                <div class="col-6 profileSetting profileSettingOrders profileSetting2 text-center m-0 p-0"
+                    onclick="location.href='#orders'">
+                    <h3>Orders</h3>
+                </div>
+
+                <div class="col-6 profileSetting profileSettingPromos text-center m-0 p-0"
+                    onclick="location.href='#promos'">
+                    <h3>Promo Codes</h3>
+                </div>
+
+                <div class="col-6 profileSetting profileSettingBag text-center m-0 p-0" onclick="location.href='/cart'">
+                    <h3>Shopping Bag</h3>
+                </div>
+            </div>
+
+            <div class=" row profileDetailsData justify-content-center px-4">
+                <div class="col-12 col-sm-10 col-md-8 text-center mt-3">
+                    <h2 class="text-center">
+                        <%=currentUser.username%>
+                    </h2>
+                    <form action="/personal/profile/data" method="POST" class="userDataForm" novalidate>
+
+                        <div class="form-group dataFirstName">
+                            <label for="profileDataFirstName" class="userFormHeaders">First Name</label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataFirstName"
+                                name="firstName" value="<%=currentUser.firstName%>" required>
+                        </div>
+
+                        <div class="form-group dataLastName">
+                            <label for="profileDataLastName" class="userFormHeaders">Last Name</label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataLastName"
+                                name="lastName" value="<%=currentUser.lastName%>" required>
+                        </div>
+
+                        <div class="form-group dataPhone">
+                            <label for="profileDataPhone" class="userFormHeaders">Phone Number</label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataPhone" name="phone"
+                                value="<%=currentUser.phone%>" required>
+                        </div>
+
+                        <div class="form-group dataCity">
+                            <label for="profileDataCity" class="userFormHeaders">City</label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataCity" name="city"
+                                value="<%=currentUser.city%>" required>
+                        </div>
+
+                        <div class="form-group dataAddress">
+                            <label for="profileDataAddress" class="userFormHeaders">Address</label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataAddress"
+                                name="address" value="<%=currentUser.address%>" required>
+                        </div>
+
+                        <div class="form-group dataEmail">
+                            <label for="profileDataEmail" class="userFormHeaders">Email</label>
+                            <input type="email" class="form-control footerFormEmail" id="profileDataEmail" name="email"
+                                value="<%=currentUser.email%>" required>
+                        </div>
+
+
+
+                        <button class="buttonSignIn buttonFormSignIn mt-3" type="submit">
+                            <div class="circleSignIn"></div>
+                            <span href="#">Save</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
+            <% if (currentUser.orders.length==0) { %>
+
+                <div class="row profileDetailsOrders displayNone m-0">
+                    <div class="col-12 text-center">
+
+                        <div class="noOrdersYet">
+                            <h2>Oops...</h2>
+                            <h3 class="m-0">It seems like you haven't made your <br> first order yet.</h3>
+                            <img src="/images/gifs/heart.gif" alt="" class="img-fluid" style="width: 120px;">
+                            <h3 class="mt-2">Pick something cool and <br> use the code </h3>
+                            <h3 class="discountCodeFive">FIRST5</h3>
+                            <h3>for 5% off!</h3>
+
+                            <div class="buttonViewShop" id="buttonViewShopYea"
+                                onclick="location.href='/shop/collections'">
+                                <div id="slideViewShop"></div>
+                                <a href="#">Continue Shopping</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <% } %>
+
+
+                    <% if (currentUser.orders.length> 0) { %>
+
+                        <div class="row profileDetailsOrders justify-content-center displayNone m-0">
+                            <% for (let i=0; i < user.orders.length; i++) { %>
+
+                                <div class="col-12 col-md-6">
+                                    <div class="orderPreview orderPreview<%=i+1%> mx-auto p-2">
+                                        <h2 class="text-center">Order #<%=i+1%>
+                                        </h2>
+                                        <% for (let a=0; a < user.orders[i].kicks.length; a++) { %>
+                                            <div class="orderItem">
+                                                <img src="<%=user.orders[i].kicks[a].image[0]%>" alt=""
+                                                    class="img-fluid">
+
+                                                <div class="orderDetails text-center">
+                                                    <h3>
+                                                        <strong>
+                                                            <%=user.orders[i].kicks[a].name%>
+                                                        </strong>
+                                                    </h3>
+
+                                                    <p>Size: EU <%=user.orders[i].sizes[a]%>
+                                                    </p>
+
+                                                    <p>Price: <%=user.orders[i].kicks[a].price%> лв.
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <% } %>
+                                                <h3 class="orderStatus text-center">Date:
+                                                    <%=user.orders[i].date%>
+                                                </h3>
+                                                <h3 class="orderStatus text-center">Status:
+                                                    <%=user.orders[i].status%>
+                                                </h3>
+                                                <hr>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <% } %>
+
+                            <div class="row profileDetailsPromos displayNone">
+                                <% if (!currentUser.discount) { %>
+                                    <div class="col-12 text-center mt-3 noDiscount">
+
+                                        <h1>Got a promo code?</h1>
+                                        <p id="promoText1" class="mx-auto">Ако си получил личен промо код, значи тук е
+                                            мястото да го
+                                            въведеш! </p>
+                                        <p id="promoText2" class="mx-auto">
+                                            Твоя личен код ти гарантира отстъпка на целия магазин!
+                                        </p>
+
+                                        <img src="/images/gifs/promo.gif" alt="" class="img-fluid promogif">
+
+                                        <div class="promoInstructions mx-auto">
+
+                                            <form action="/personal/profile/promocode" method="POST" class="mt-3">
+                                                <label for="promoCode" style="margin-bottom: 0;">КОД:</label>
+                                                <input type="text" id="promoCode" name="promoCode" placeholder="420420"
+                                                    class="footerFormEmail mx-auto"
+                                                    style="margin-top: 5px; width: 100px; display: block;">
+
+
+                                                <button class="buttonViewShopPromo" id="buttonViewShopYea"
+                                                    type="submit">
+                                                    <div id="slideViewShop"></div>
+                                                    <span href="#">Aктивирай</span>
+                                                </button>
+
+                                            </form>
+                                        </div>
+
+
+                                    </div>
+                                    <% } %>
+
+                                        <% if (currentUser.discount) { %>
+
+
+                                            <div class="col-12 text-center discountActive"
+                                                style="margin-top: 20px !important;">
+                                                <h1>Имаш <%= currentUser.discount%>% отстъпка <br> на всичко!</h1>
+                                                <img src="/images/gifs/happy.gif" alt="" class="img-fluid"
+                                                    style="width: 220px;">
+                                                <p>Отстъпката се прилага <br> автоматично при добавяне в <br> кошницата!
+                                                </p>
+                                                <div class="buttonViewShop2" id="buttonViewShopYea"
+                                                    onclick="location.href='/shop/collections'">
+                                                    <div id="slideViewShop"></div>
+                                                    <span href="#">Виж колекциите</span>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+    <script>
+        const profileSettingData = document.querySelector('.profileSettingData');
+        const profileSettingOrders = document.querySelector('.profileSettingOrders');
+        const profileSettingPromos = document.querySelector('.profileSettingPromos');
+        const profileSettingBag = document.querySelector('.profileSettingBag');
+
+        const profileDetailsData = document.querySelector('.profileDetailsData')
+        const profileDetailsOrders = document.querySelector('.profileDetailsOrders')
+        const profileDetailsPromos = document.querySelector('.profileDetailsPromos')
+        const profileDetailsBag = document.querySelector('.profileDetailsBag')
+
+
+
+
+
+
+        profileDetailsData.classList.add('opacityOne');
+
+        profileSettingData.addEventListener('click', function () {
+            profileSettingOrders.classList.remove('profileSettingActive');
+            profileSettingPromos.classList.remove('profileSettingActive');
+            profileSettingBag.classList.remove('profileSettingActive');
+
+            profileSettingData.classList.add('profileSettingActive');
+
+
+            profileDetailsData.classList.remove('displayNone');
+            setTimeout(function () {
+                profileDetailsData.classList.add('opacityOne');
+                profileDetailsOrders.classList.remove('opacityOne');
+                profileDetailsPromos.classList.remove('opacityOne');
+            }, 1);
+            profileDetailsOrders.classList.add('displayNone');
+            profileDetailsPromos.classList.add('displayNone');
+            profileDetailsBag.classList.add('displayNone');
+        })
+
+        profileSettingOrders.addEventListener('click', function () {
+            profileSettingData.classList.remove('profileSettingActive');
+            profileSettingPromos.classList.remove('profileSettingActive');
+            profileSettingBag.classList.remove('profileSettingActive');
+
+            profileSettingOrders.classList.add('profileSettingActive');
+
+            profileDetailsOrders.classList.remove('displayNone');
+            setTimeout(function () {
+                profileDetailsOrders.classList.add('opacityOne');
+                profileDetailsData.classList.remove('opacityOne');
+                profileDetailsPromos.classList.remove('opacityOne');
+            }, 1);
+            profileDetailsData.classList.add('displayNone');
+            profileDetailsPromos.classList.add('displayNone');
+            profileDetailsBag.classList.add('displayNone');
+        })
+
+        profileSettingPromos.addEventListener('click', function () {
+            profileSettingOrders.classList.remove('profileSettingActive');
+            profileSettingData.classList.remove('profileSettingActive');
+            profileSettingBag.classList.remove('profileSettingActive');
+
+            profileSettingPromos.classList.add('profileSettingActive');
+
+            profileDetailsPromos.classList.remove('displayNone');
+            setTimeout(function () {
+                profileDetailsPromos.classList.add('opacityOne');
+                profileDetailsData.classList.remove('opacityOne');
+                profileDetailsOrders.classList.remove('opacityOne');
+            }, 1);
+            profileDetailsData.classList.add('displayNone');
+            profileDetailsOrders.classList.add('displayNone');
+            profileDetailsBag.classList.add('displayNone');
+        })
+
+        profileSettingBag.addEventListener('click', function () {
+            profileSettingOrders.classList.remove('profileSettingActive');
+            profileSettingPromos.classList.remove('profileSettingActive');
+            profileSettingData.classList.remove('profileSettingActive');
+
+            profileSettingBag.classList.add('profileSettingActive');
+        })
+
+        let currentHashtag = window.location.href.slice(38, 50);
+        console.log(currentHashtag);
+        if (currentHashtag == '#data') {
+            profileSettingOrders.classList.remove('profileSettingActive');
+            profileSettingPromos.classList.remove('profileSettingActive');
+            profileSettingBag.classList.remove('profileSettingActive');
+
+            profileSettingData.classList.add('profileSettingActive');
+
+
+            profileDetailsData.classList.remove('displayNone');
+            setTimeout(function () {
+                profileDetailsData.classList.add('opacityOne');
+                profileDetailsOrders.classList.remove('opacityOne');
+                profileDetailsPromos.classList.remove('opacityOne');
+            }, 1);
+            profileDetailsOrders.classList.add('displayNone');
+            profileDetailsPromos.classList.add('displayNone');
+            profileDetailsBag.classList.add('displayNone');
+        }
+
+        if (currentHashtag == '#orders') {
+            profileSettingData.classList.remove('profileSettingActive');
+            profileSettingPromos.classList.remove('profileSettingActive');
+            profileSettingBag.classList.remove('profileSettingActive');
+
+            profileSettingOrders.classList.add('profileSettingActive');
+
+            profileDetailsOrders.classList.remove('displayNone');
+            setTimeout(function () {
+                profileDetailsOrders.classList.add('opacityOne');
+                profileDetailsData.classList.remove('opacityOne');
+                profileDetailsPromos.classList.remove('opacityOne');
+            }, 1);
+            profileDetailsData.classList.add('displayNone');
+            profileDetailsPromos.classList.add('displayNone');
+            profileDetailsBag.classList.add('displayNone');
+        }
+
+        if (currentHashtag == '#promos') {
+            profileSettingOrders.classList.remove('profileSettingActive');
+            profileSettingData.classList.remove('profileSettingActive');
+            profileSettingBag.classList.remove('profileSettingActive');
+
+            profileSettingPromos.classList.add('profileSettingActive');
+
+            profileDetailsPromos.classList.remove('displayNone');
+            setTimeout(function () {
+                profileDetailsPromos.classList.add('opacityOne');
+                profileDetailsData.classList.remove('opacityOne');
+                profileDetailsOrders.classList.remove('opacityOne');
+            }, 1);
+            profileDetailsData.classList.add('displayNone');
+            profileDetailsOrders.classList.add('displayNone');
+            profileDetailsBag.classList.add('displayNone');
+        }
+
+    </script>

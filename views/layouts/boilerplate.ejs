@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+    <!-- CSS !AOS! -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+    <!-- CSS !BOILERPLATE! [ Navbar, Footer, Style ] -->
+    <link rel="stylesheet" href="/stylesheets/boilerplate/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/boilerplate/footer.css">
+    <link rel="stylesheet" href="/stylesheets/boilerplate/style.css">
+    <link rel="stylesheet" href="/stylesheets/boilerplate/loader.css">
+
+    <!-- CSS [ FAQ Page ]-->
+    <link rel="stylesheet" href="/stylesheets/faq/faq.css">
+
+    <!-- CSS [ Home Page ] -->
+    <link rel="stylesheet" href="/stylesheets/home/bonuses.css">
+    <link rel="stylesheet" href="/stylesheets/home/cardsOne.css">
+    <link rel="stylesheet" href="/stylesheets/home/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/home/cont4.css">
+    <link rel="stylesheet" href="/stylesheets/home/contAbstract.css">
+    <link rel="stylesheet" href="/stylesheets/home/reviews.css">
+    <link rel="stylesheet" href="/stylesheets/home/section1Showcase.css">
+    <link rel="stylesheet" href="/stylesheets/home//section3.css">
+    <link rel="stylesheet" href="/stylesheets/home/wavy.css">
+
+
+
+
+    <!-- CSS [ Users ] -->
+    <link rel="stylesheet" href="/stylesheets/users/register.css">
+    <link rel="stylesheet" href="/stylesheets/users/profile.css">
+
+
+    <!-- CSS [ SHOP ] -->
+    <link rel="stylesheet" href="/stylesheets/shop/show.css">
+    <link rel="stylesheet" href="/stylesheets/shop/collections.css">
+    <link rel="stylesheet" href="/stylesheets/shop/collection.css">
+
+    <!-- CSS [ CART ] -->
+    <link rel="stylesheet" href="/stylesheets/cart/cart.css">
+    <link rel="stylesheet" href="/stylesheets/cart/details.css">
+    <link rel="stylesheet" href="/stylesheets/cart/finish.css">
+
+    <!-- Montserrat google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Roboto google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Nunito Sans google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Roboto Slab google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Alfa Slab One -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <!-- Yeseva One Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <!-- Open Sans Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+    <!-- tippy -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-toward-extreme.css" />
+
+    <title>Unixo</title>
+</head>
+
+<body class="">
+    <%- include('../partials/navbar') %>
+
+
+
+        <main class="container-fluid wrapper">
+            <%- body %>
+                <!-- %- include('../partials/flash') %> -->
+
+                <div class="loader-wraper">
+                    <div class="loader-wrapper">
+                        <div class="sk-cube-grid">
+                            <div class="sk-cube sk-cube1"></div>
+                            <div class="sk-cube sk-cube2"></div>
+                            <div class="sk-cube sk-cube3"></div>
+                            <div class="sk-cube sk-cube4"></div>
+                            <div class="sk-cube sk-cube5"></div>
+                            <div class="sk-cube sk-cube6"></div>
+                            <div class="sk-cube sk-cube7"></div>
+                            <div class="sk-cube sk-cube8"></div>
+                            <div class="sk-cube sk-cube9"></div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+                integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+                crossorigin="anonymous"></script> -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script> -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"></script> -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+                integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+                crossorigin="anonymous"></script>
+
+            <!-- Swiper -->
+
+            <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+            <!-- Font Awesome -->
+            <script src="https://kit.fontawesome.com/8ac396e34b.js" crossorigin="anonymous"></script>
+
+            <!-- My JS -->
+            <script src="/javascripts/navbar.js"></script>
+            <script src="/javascripts/footer.js"></script>
+            <script src="/javascripts/loader.js"></script>
+            <script src="/javascripts/faq.js"></script>
+            <script src="/javascripts/home.js"></script>
+            <script src="/javascripts/shopShow.js"></script>
+            <script src="/javascripts/collections.js"></script>
+            <script src="/javascripts/collection.js"></script>
+            <script src="/javascripts/swiper.js"></script>
+            <script src="/javascripts/validateForm.js"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+
+</body>

@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row collectionsRow">
+
+        <div class="collectionExpirationDesktop">
+            <p class="collectionExpirationDateDesktop"></p>
+        </div>
+
+        <div class="col-12 col-xl-4 collectionsCol">
+            <a href="/shop/collections/<%=collections[1].collectionId%>/">
+                <img src="/images/collections/collection1.jpg" alt="" class="img-fluid shopCollectionsImage">
+                <a href="/shop/collections/11001" class="collectionTitleTop">
+                    <h2 class="headerTextShadow shopCollectionsHeader">
+                        <%= collections[1].name%>
+                    </h2>
+                </a>
+                <h4 class="headerTextShadow collectionSubTitleTop collectionsSubTitleText text-center">Some beautiful
+                    paths <br> can't be
+                    discovered
+                    <br>
+                    without <br> getting lost.
+                </h4>
+
+                <div class="collectionButtonWraper1">
+                    <div class="buttonViewCollection1" id="buttonViewCollection1-1">
+                        <div id="buttonViewCollectionSlide1"></div>
+                        <a href="#">ВИЖ ЦЯЛАТА СЕРИЯ</a>
+                    </div>
+                </div>
+
+                <div class="collectionExpiration">
+                    <p class="collectionExpirationDate text-center"></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-xl-4 collectionsCol ">
+            <a href="/shop/collections/<%=collections[2].collectionId%>">
+                <img src="/images/collections/collection2.jpg" alt="" class="img-fluid shopCollectionsImage">
+                <a href="/shop/collections/11002" class="collectionTitleCenter">
+                    <h2 class="headerTextShadow shopCollectionsHeader ">
+                        <%= collections[2].name%>
+                    </h2>
+                </a>
+                <h4 class="headerTextShadow collectionSubTitleCenter collectionsSubTitleText text-center">I'm all about
+                    nightlife. <br> I live
+                    during the <br> night.
+                </h4>
+                <div class="collectionExpiration">
+                    <p class="collectionExpirationDate text-center"></p>
+                </div>
+
+                <div class="collectionButtonWraper2">
+                    <div class="buttonViewCollection2" id="buttonViewCollection2-2">
+                        <div id="buttonViewCollectionSlide2"></div>
+                        <a href="#">ВИЖ ЦЯЛАТА СЕРИЯ</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-xl-4 collectionsCol">
+            <a href="/shop/collections/<%=collections[0].collectionId%>">
+                <img src="/images/collections/collection3.jpg" alt="" class="img-fluid shopCollectionsImage">
+                <a href="/shop/collections/11003" class="collectionTitleBottom">
+                    <h2 class="headerTextShadow shopCollectionsHeader text-center">
+                        <%= collections[0].name%>
+                    </h2>
+                </a>
+                <h4 class="collectionSubTitleBottom collectionsSubTitleText">The sky <br> is NOT the limit, <br> It's
+                    just the beginning
+                </h4>
+
+                <div class="collectionButtonWraper3">
+                    <div class="buttonViewCollection3" id="buttonViewCollection3-3">
+                        <div id="buttonViewCollectionSlide3"></div>
+                        <a href="#">ВИЖ ЦЯЛАТА СЕРИЯ</a>
+                    </div>
+                </div>
+                <div class="collectionExpiration">
+                    <p class="collectionExpirationDate text-center"></p>
+                </div>
+            </a>
+        </div>
+    </div>

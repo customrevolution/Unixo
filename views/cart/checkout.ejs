@@ -1,0 +1,333 @@
+<% layout('layouts/boilerplate')%>
+
+    <div class="row cartImageRow m-0">
+        <div class="col-12 cartImage p-0">
+            <img src="/images/collections/resized/collection2_2.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="cartImageHeader text-center">
+            <h2>Unixo</h2>
+            <h1>Кошница</h1>
+        </div>
+    </div>
+
+    <div class="row orderSummary justify-content-center m-0">
+        <div class="progress">
+            <h3 class="progressH1">1. Overview</h3>
+            <h3 class="progressH2" style="color: white; text-shadow: 1px 1px 1px black;">2. Delivery Options</h3>
+            <h3 class="progressH3">3. Order Review</h3>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="66"
+                aria-valuemin="0" aria-valuemax="100" style="width: 66%"></div>
+        </div>
+
+
+        <% if (currentUser) { %>
+
+            <form action="/cart/checkout" method="POST" class="userCheckoutForm needs-validation" novalidate>
+
+                <input type="hidden" value="<%= new Date(); %>" name="date">
+
+                <h2 class="checkoutHeading">Order Details</h2>
+
+                <div class="form-group dataEmailCheckout">
+                    <label for="profileDataEmail2" class="userFormHeaders">Email <span
+                            class="requiredAsterisk">*</span></label>
+                    <input type="email" class="form-control footerFormEmail" id="profileDataEmail2" name="email"
+                        value="<%=currentUser.email%>" required>
+                </div>
+
+                <div class="form-group orderDataFirstName">
+                    <label for="profileDataFirstName2" class="userFormHeaders">Name <span
+                            class="requiredAsterisk">*</span></label>
+                    <input type="text" class="form-control footerFormEmail" id="profileDataFirstName2" name="firstName"
+                        value="<%=currentUser.firstName%>" required>
+                </div>
+
+                <div class="form-group orderDataLastName">
+                    <label for="profileDataLastName2" class="userFormHeaders">Last Name <span
+                            class="requiredAsterisk">*</span></label>
+                    <input type="text" class="form-control footerFormEmail" id="profileDataLastName2" name="lastName"
+                        value="<%=currentUser.lastName%>" required>
+                </div>
+
+
+                <div class="form-group orderDataCity">
+                    <label for="profileDataCity2" class="userFormHeaders">City <span
+                            class="requiredAsterisk">*</span></label>
+                    <input type="text" class="form-control footerFormEmail" id="profileDataCity2" name="city"
+                        value="<%=currentUser.city%>" required>
+                </div>
+
+                <div class="form-group orderDataAddress">
+                    <label for="profileDataAddress2" class="userFormHeaders">Address <span
+                            class="requiredAsterisk">*</span></label>
+                    <input type="text" class="form-control footerFormEmail" id="profileDataAddress2" name="address"
+                        value="<%=currentUser.address%>" required>
+                </div>
+
+                <div class="form-group orderDataPhone">
+                    <label for="profileDataPhone" class="userFormHeaders">Phone # <span
+                            class="requiredAsterisk">*</span></label>
+                    <input type="text" class="form-control footerFormEmail" id="profileDataPhone" name="phone"
+                        value="<%=currentUser.phone%>" required>
+                </div>
+
+                <div class="custom-control custom-checkbox checkboxFix">
+                    <input type="checkbox" class="custom-control-input no-validate1" name="newsletter"
+                        id="newsletterCheck" checked>
+                    <label class="custom-control-label no-validate1" for="newsletterCheck">Recieve promo codes and
+                        news
+                        on
+                        your email.</label>
+                </div>
+
+                <h2 class="checkoutHeading">Additional Info</h2>
+
+                <div class="form-group">
+                    <label for="orderUserDetails" class="userFormHeaders mt-3">Notes on your order
+                        (optional)</label>
+                    <textarea class="form-control footerFormEmail" id="orderUserDetails" rows="3"
+                        placeholder="Any additional notes (about the delivery or other)"
+                        name="additionalInfo"></textarea>
+                </div>
+
+                <h2 class="checkoutHeading">Payment</h2>
+                <p style="text-transform: uppercase; margin-top: 20px; font-size: 20px; letter-spacing: 2.4px;">Cash
+                    on
+                    Delivery</p>
+
+                <div class="cartSummary p-3 mb-5">
+                    <h3 class="cartSummaryHeading text-center">Summary</h3>
+                    <div class="cartTotals">
+                        <% for (let i=1; i < cart.length; i++) { %>
+                            <div class="cartSubTotal">
+                                <p class="cartSummaryTitle" style="color: rgb(95, 95, 95); letter-spacing: 2.4px;">
+                                    <%=cart[i].name%>
+                                        <span style="color: rgb(41, 41, 41);">&nbsp; × 1 </span>
+                                </p>
+                                <p class="floatRight">
+                                    $<%=cart[i].price%>.00
+                                </p>
+                            </div>
+                            <% } %>
+                                <div class="cartSubTotal mt-2">
+                                    <p class="cartSummaryTitle">SUB TOTAL</p>
+                                    <p class="floatRight">
+                                        $<%=cartTotal%>.00
+                                    </p>
+                                </div>
+                                <hr style="width: 100%; margin-top: 2.5px; margin-bottom: 7.5px;">
+
+                                <% if (currentUser) { %>
+                                    <% if (currentUser.discount) { %>
+                                        <div class="cartDiscount">
+                                            <p class="cartSummaryTitle">DISCOUNT <%=currentUser.discount%>%</p>
+                                            <p class="floatRight">
+                                                $<%=(cartTotal /currentUser.discount)%>.00
+                                            </p>
+                                        </div>
+                                        <% } %>
+                                            <% } %>
+                                                <div class="cartShipping">
+                                                    <p class="cartSummaryTitle">DELIVERY</p>
+                                                    <p class="floatRight">$0.00</p>
+                                                </div>
+
+                                                <div class="cartTotal">
+                                                    <p class="cartSummaryTitle">TOTAL</p>
+                                                    <p class="floatRight">$<%= cartTotal - (cartTotal
+                                                            /currentUser.discount) %>.00</p>
+                                                </div>
+                    </div>
+
+
+                    <button class="buttonSignIn buttonFormSignIn mx-auto mt-2 mb-2" type="submit">
+                        <div class="circleSignIn"></div>
+                        <span href="">Order</span>
+                    </button>
+                </div>
+
+
+
+
+            </form>
+
+            <% } %>
+                <% if (!currentUser) { %>
+
+                    <form action="/cart/checkout" method="POST" class="userCheckoutForm needs-validation" novalidate>
+
+                        <input type="hidden" value="<%= new Date(); %>" name="date">
+
+                        <h2 class="checkoutHeading">Order Details</h2>
+
+                        <div class="form-group dataEmailCheckout">
+                            <label for="profileDataEmail2" class="userFormHeaders">Email <span
+                                    class="requiredAsterisk">*</span></label>
+                            <input type="email" class="form-control footerFormEmail" id="profileDataEmail2" name="email"
+                                value="" required>
+                        </div>
+
+                        <div class="form-group orderDataFirstName">
+                            <label for="profileDataFirstName2" class="userFormHeaders">Name <span
+                                    class="requiredAsterisk">*</span></label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataFirstName2"
+                                name="firstName" value="" required>
+                        </div>
+
+                        <div class="form-group orderDataLastName">
+                            <label for="profileDataLastName2" class="userFormHeaders">Last Name <span
+                                    class="requiredAsterisk">*</span></label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataLastName2"
+                                name="lastName" value="" required>
+                        </div>
+
+
+                        <div class="form-group orderDataCity">
+                            <label for="profileDataCity2" class="userFormHeaders">City <span
+                                    class="requiredAsterisk">*</span></label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataCity2" name="city"
+                                value="" required>
+                        </div>
+
+                        <div class="form-group orderDataAddress">
+                            <label for="profileDataAddress2" class="userFormHeaders">Address <span
+                                    class="requiredAsterisk">*</span></label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataAddress2"
+                                name="address" value="" required>
+                        </div>
+
+                        <div class="form-group orderDataPhone">
+                            <label for="profileDataPhone" class="userFormHeaders">Phone # <span
+                                    class="requiredAsterisk">*</span></label>
+                            <input type="text" class="form-control footerFormEmail" id="profileDataPhone" name="phone"
+                                value="" required>
+                        </div>
+
+                        <div class="custom-control custom-checkbox checkboxFix">
+                            <input type="checkbox" class="custom-control-input no-validate1" name="newsletter"
+                                id="newsletterCheck" checked>
+                            <label class="custom-control-label no-validate1" for="newsletterCheck">Recieve promo codes
+                                and
+                                news
+                                on
+                                your email.</label>
+                        </div>
+
+                        <h2 class="checkoutHeading">Additional Info</h2>
+
+                        <div class="form-group">
+                            <label for="orderUserDetails" class="userFormHeaders mt-3">Notes on your order
+                                (optional)</label>
+                            <textarea class="form-control footerFormEmail" id="orderUserDetails" rows="3"
+                                placeholder="Any additional notes (about the delivery or other)"
+                                name="additionalInfo"></textarea>
+                        </div>
+
+                        <h2 class="checkoutHeading">Payment</h2>
+                        <p style="text-transform: uppercase; margin-top: 20px; font-size: 20px; letter-spacing: 2.4px;">
+                            Cash
+                            on
+                            Delivery</p>
+
+                        <div class="cartSummary p-3 mb-5">
+                            <h3 class="cartSummaryHeading text-center">Summary</h3>
+                            <div class="cartTotals">
+                                <% for (let i=1; i < cart.length; i++) { %>
+                                    <div class="cartSubTotal">
+                                        <p class="cartSummaryTitle"
+                                            style="color: rgb(95, 95, 95); letter-spacing: 2.4px;">
+                                            <%=cart[i].name%>
+                                                <span style="color: rgb(41, 41, 41);">&nbsp; × 1 </span>
+                                        </p>
+                                        <p class="floatRight">
+                                            $<%=cart[i].price%>.00
+                                        </p>
+                                    </div>
+                                    <% } %>
+                                        <div class="cartSubTotal mt-2">
+                                            <p class="cartSummaryTitle">SUB TOTAL</p>
+                                            <p class="floatRight">
+                                                $<%=cartTotal%>.00
+                                            </p>
+                                        </div>
+                                        <hr style="width: 100%; margin-top: 2.5px; margin-bottom: 7.5px;">
+
+                                        <% if (currentUser) { %>
+                                            <% if (currentUser.discount) { %>
+                                                <div class="cartDiscount">
+                                                    <p class="cartSummaryTitle">DISCOUNT <%=currentUser.discount%>%</p>
+                                                    <p class="floatRight">
+                                                        <%=(cartTotal /currentUser.discount)%>
+                                                    </p>
+                                                </div>
+                                                <% } %>
+                                                    <% } %>
+                                                        <div class="cartShipping">
+                                                            <p class="cartSummaryTitle">DELIVERY</p>
+                                                            <p class="floatRight">$0.00</p>
+                                                        </div>
+
+                                                        <div class="cartTotal">
+                                                            <p class="cartSummaryTitle">TOTAL</p>
+                                                            <p class="floatRight">$<%= cartTotal %>.00</p>
+                                                        </div>
+                            </div>
+
+
+                            <button class="buttonSignIn buttonFormSignIn mx-auto mt-2 mb-2" type="submit">
+                                <div class="circleSignIn"></div>
+                                <span href="">Order</span>
+                            </button>
+                        </div>
+
+
+
+
+                    </form>
+
+                    <% } %>
+
+                        <div class="cartItemsCheckout">
+                            <h2 class="checkoutHeading">Your Items</h2>
+
+                            <% for (i=1; i < cart.length; i++) {%>
+
+                                <div class="cartItemCheckout">
+
+                                    <img src="<%=cart[i].image[0]%>" alt="" class="img-fluid">
+                                    <div class="cartItemDetailsCheckout">
+                                        <h4 class="chartDescription2Checkout">
+                                            <%=cart[i].name%>
+                                        </h4>
+                                        <h5 class="chartDescription3Checkout">
+                                            AIR FORCE 1 LOW
+                                        </h5>
+                                        <p class="cartItemSizeCheckout">EU <%=cart[i].size%>
+                                        </p>
+
+                                        <div class="priceBubbleCheckout">
+                                            <p class="cartItemPriceCheckout">
+                                                <% if (currentUser && currentUser.discount) { %>
+                                                    $<%=cart[i].price - (cartTotal /currentUser.discount)%>.00
+                                                        <% } %>
+                                                            <% if (!currentUser) { %>
+                                                                $<%=cart[i].price%>.00
+                                                                    <% } %>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <hr style="width: 100%;">
+                                <% } %>
+                        </div>
+
+
+    </div>
+
+    <script>
+
+
+    </script>

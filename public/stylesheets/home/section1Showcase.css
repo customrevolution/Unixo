@@ -1,0 +1,27 @@
+#cont2 p {
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    line-height: 19.8px;
+  }
+  
+  #cont2 h4 {
+    margin-top: 16px;
+    font-size: 20px;
+    letter-spacing: 4px;
+    line-height: 33px;
+  }
+
+  .img-zoom-cont {
+    overflow: hidden;
+  }
+
+  .homepageKicks{
+    transform-origin: 50% 50%;
+
+    transition: transform .5s, visibility .5s ease-in;
+  }
+  
+  /* The Transformation */
+  .homepageKicks:hover {
+    transform: scale(1.05);
+  }

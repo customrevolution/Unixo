@@ -1,0 +1,180 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row m-0 usersPage">
+        <img src="/images/users/register1.jpg" alt="" class="img-fluid">
+    </div>
+
+    <div class="row m-0 usersPage2 justify-content-center">
+        <div class="col-11 col-sm-8 col-lg-6 col-xl-4 usersForm">
+            <div class="row m-0 p-0 ">
+                <div class="col-6 usersFormOption usersFormOptionSignIn userFormOptionActive text-center"
+                    onclick="location.href='#'">
+                    <h3>Sign In</h3>
+                </div>
+                <div class="col-6 usersFormOption usersFormOptionRegister text-center" onclick="location.href='#reg'">
+                    <h3>Register</h3>
+                </div>
+            </div>
+
+            <div class=" row usersFormDetailsSignIn" style="opacity: 1;">
+
+                <div class="col-12 text-center">
+                    <%- include('../partials/flash') %>
+                        <form action="/login" method="POST" class="needs-validation" novalidate>
+
+                            <div class="form-group">
+                                <label for="signInUsername" class="userFormHeaders">Username</label>
+                                <input type="text" class="form-control footerFormEmail" id="signInUsername"
+                                    placeholder="Username" name="username" required>
+                            </div>
+
+                            <div class="form-group usersFormPassword">
+                                <label for="signInPassword" class="userFormHeaders">Password</label>
+
+                                <input type="password" class="form-control footerFormEmail" id="signInPassword"
+                                    placeholder="Password" name="password" required>
+
+                            </div>
+
+                            <!-- <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Agree to terms and conditions
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div> -->
+                            <button class="buttonSignIn buttonFormSignIn" type="submit">
+                                <div class="circleSignIn"></div>
+                                <span href="#">Sign In</span>
+                            </button>
+                        </form>
+                </div>
+            </div>
+
+            <div class="row usersFormDetailsRegister">
+                <div class="col-12 text-center">
+                    <%- include('../partials/flash') %>
+                        <form action="/register" method="POST" class="needs-validation mt-4" novalidate>
+
+                            <div class="form-group">
+                                <label for="registerUsername" class="userFormHeaders">Username</label>
+                                <input type="text" class="form-control footerFormEmail" id="registerUsername"
+                                    placeholder="George32" name="newAccount[username]" required>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <label for="registerEmail" class="userFormHeaders">Email</label>
+                                <input type="email" class="form-control footerFormEmail" id="registerEmail"
+                                    placeholder="ne_piq_ne_pusha@abv.bg" name="newAccount[email]" required>
+                            </div>
+
+                            <div class="form-group usersFormPassword">
+                                <label for="registerPassword" class="userFormHeaders">Password</label>
+
+                                <input type="password" class="form-control footerFormEmail" id="registerPassword"
+                                    placeholder="Password" name="newAccount[password]" required>
+
+                            </div>
+
+
+                            <div class="custom-control custom-checkbox checkboxFix">
+                                <input type="checkbox" class="custom-control-input no-validate1"
+                                    name="newAccount[newsletter]" id="newsletterCheck" checked>
+                                <label class="custom-control-label no-validate1" for="newsletterCheck">Recieve discounts
+                                    and news on your mail.</label>
+                            </div>
+
+
+
+                            <button class="buttonSignIn buttonFormSignIn mt-4" type="submit">
+                                <div class="circleSignIn"></div>
+                                <span href="#">Sign In</span>
+                            </button>
+                        </form>
+                </div>
+            </div>
+
+            <div class="row m-0 p-0 usersFormDetailsRegister">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const usersFormOptionSignIn = document.querySelector('.usersFormOptionSignIn');
+        const usersFormOptionRegister = document.querySelector('.usersFormOptionRegister');
+
+        const usersFormDetailsSignIn = document.querySelector('.usersFormDetailsSignIn');
+        const usersFormDetailsRegister = document.querySelector('.usersFormDetailsRegister');
+
+        const usersForm = document.querySelector('.usersForm');
+
+        let screenHeight = screen.height;
+
+        if (document.querySelector('.alert')) {
+            usersFormDetailsSignIn.classList.add('usersDetailsMargin');
+            document.querySelector('.alert').classList.remove('fade')
+            document.querySelector('.alert').addEventListener('click', function () {
+                usersFormDetailsSignIn.classList.remove('usersDetailsMargin');
+            })
+        }
+
+
+
+
+
+        let currentHashtag = window.location.href.slice(30, 40);
+        if (currentHashtag == '#reg') {
+            usersFormOptionSignIn.classList.remove('userFormOptionActive');
+            usersFormOptionRegister.classList.add('userFormOptionActive');
+
+            usersFormDetailsSignIn.style = "display: none; opacity: 0;";
+            usersFormDetailsRegister.style = "display: block;";
+            usersForm.style = "height: 650px;"
+            setTimeout(function () {
+                usersFormDetailsRegister.style = "opacity: 1;"
+            }, 1);
+        }
+
+        usersFormOptionSignIn.addEventListener('click', function () {
+            usersFormOptionRegister.classList.remove('userFormOptionActive');
+            usersFormOptionSignIn.classList.add('userFormOptionActive');
+
+            usersFormDetailsSignIn.style = "display: block;"
+            setTimeout(function () {
+                usersFormDetailsSignIn.style = "opacity: 1;"
+            }, 1);
+            usersFormDetailsRegister.style = "display: none; opacity: 0;"
+            usersForm.style = "height: 550px;"
+
+        })
+
+        usersFormOptionRegister.addEventListener('click', function () {
+            usersFormOptionSignIn.classList.remove('userFormOptionActive');
+            usersFormOptionRegister.classList.add('userFormOptionActive');
+
+            usersFormDetailsSignIn.style = "display: none; opacity: 0;";
+            usersFormDetailsRegister.style = "display: block;";
+            usersForm.style = "height: 650px;"
+            setTimeout(function () {
+                usersFormDetailsRegister.style = "opacity: 1;"
+            }, 1);
+
+        })
+
+        console.log(window.location.href) // http://localhost:3000/register#reg
+
+
+
+
+        window.addEventListener('resize', function () {
+            let screenHeight = screen.height;
+        })
+
+
+
+    </script>

@@ -1,0 +1,330 @@
+<div class="navWrapper">
+    <div class="container-fluid sidebar">
+
+        <div class="row w-100 m-0 p-0 sidebarRowBrand">
+            <div class="col-12 m-0 sidebarColBrand text-center">
+                <button class="sidebarClose">&#x2715</button>
+                <h2 class="sidebarBrand text-center">UNIXO</h2>
+            </div>
+        </div>
+
+        <nav class="row sidebarRowMain">
+
+            <div class="col-12 sidebarButton">
+                <a href="/personal/profile" class="sidebarLink">
+                    <% if (currentUser) { %>
+                        <%=currentUser.username%>
+                            <% } else { %>
+                                Моят акаунт
+                                <% }%>
+                </a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarButton">
+                <a href="/shop/collections" class="sidebarLink">Collections</a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarButton">
+                <a href="/faq" class="sidebarLink">Questions & Answers</a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarButton">
+                <a href="/personal/profile#orders" class="sidebarLink">Orders</a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarButton">
+                <a href="/personal/profile#promos" class="sidebarLink">Promo Codes</a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarFindUs">
+                <a href="#" class="sidebarLink">Contacts</a>
+                <ul class="linkList sidebarMargin">
+                    <li><i class="fas fa-phone-alt footerIcon"></i> Phone: <a href="tel:089 013 6562"
+                            class="sidebarClickable">
+                            089 0136 562</a></li>
+                    <li><i class="fas fa-phone-alt footerIcon"></i> Phone: <a href="tel:089 277 7709"
+                            class="sidebarClickable">
+                            089 2777 709</a></li>
+                    <li><i class="far fa-envelope footerIcon"></i> E-Mail: <a href="mailto:sales@unixo.com"
+                            class="sidebarClickable">
+                            sales@unixo.com </a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 sidebarSocial">
+                <a href="#" class="sidebarLink">Follow</a>
+                <ul class="sidebarLinkList">
+                    <li class="sidebarIcon">
+                        <a href="#" class="fab fa-facebook fa-3x"></a>
+                    </li>
+
+                    <li class="sidebarIcon">
+                        <a href="#" class="fab fa-facebook-messenger fa-3x"></a>
+                    </li>
+
+                    <li class="sidebarIcon">
+                        <a href="#" class="fab fa-instagram fa-3x"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                <form action="/newsletter" method="POST" id="sidebarNewsletter" class="needs-validation" novalidate>
+                    <h3 class="sidebarLink">Newsletter</h3>
+                    <div class="form-group">
+                        <label class="sidebarText" for="exampleInputEmail2">Subscribe to receive access
+                            to exclusive deals.
+                        </label>
+                        <input type="email" class="sidebarFormEmail form-control" id="exampleInputEmail2"
+                            name="emailNewsletter" aria-describedby="emailHelp" placeholder="Enter your email address"
+                            required>
+
+                        <!-- <div class="buttonSubmitSidebar" id="buttonSubmitSidebar2"
+                            onclick="document.querySelector('#sidebarNewsletter').submit();">
+                            <div id="slideSubmitSidebar"></div>
+                            <a href="#">Subscribe</a>
+                        </div> -->
+
+                        <button class="buttonSubmitSidebar" id="buttonSubmitSidebar2" type="submit">
+                            <div id="slideSubmitSidebar"></div>
+                            <span href="#">Subscribe</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </nav>
+
+    </div>
+
+
+
+    <div class="container-fluid overlay">
+
+    </div>
+
+
+
+    <nav class="navbar fixed-top navbar-dark bg-transparent">
+
+
+        <div id="cont1" class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-5 my-auto mr-0">
+
+                    <div class="d-inline-flex navbarMenu">
+                        <ul class="navbarLinkList">
+                            <li class="navbarListItem">
+                                <a class="navbarLink navbarClickable" href="/shop/collections">Collections</a>
+                            </li>
+
+                            <li class="navbarListItem">
+                                <a class="navbarLink navbarClickable" href="/faq">Questions & Answers</a>
+                            </li>
+
+                            <li class="navbarListItem" style="visibility: hidden;">
+                                <a class="navbarLink navbarClickable" href="" style="display:none;">&nbsp</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <button class="navbarDropDown">
+                        <img src="/images/icons/menu.svg" alt="" style="color: blue;">
+                    </button>
+
+                </div>
+
+
+
+                <div class="col-2 text-center my-auto">
+                    <a class="navbar-brand" href="/">UNIXO</a>
+                    <!-- <img src="img/icons/brand5.png" alt="" style="width: 100%;" class="img-fluid"> -->
+                </div>
+
+
+
+
+                <div class="col-5 my-auto text-right" id="navbarCol3">
+
+
+                    <div class="d-inline-flex h-75 my-auto navbarShop">
+
+                        <% if (currentUser) { %>
+                            <button id="navProfileButton" class="d-inline-flex h-75 buttonHelp buttonAccount"
+                                onclick="location.href = '#';">
+                                <img src="/images/icons/user.png" class="navUser" alt="">
+
+                                <p>
+                                    <% if (currentUser) {%>
+                                        <%=currentUser.username%>
+                                            <% } else { %>
+                                                Profile
+                                                <% } %>
+                                </p>
+
+                            </button>
+                            <% } %>
+
+                                <% if (!currentUser) { %>
+                                    <button class="d-inline-flex h-75 buttonHelp buttonAccount buttonAccountNoUser"
+                                        onclick="location.href = '/register';">
+                                        <img src="/images/icons/user.png" class="navUser" alt="">
+                                        <p>JOIN US</p>
+                                    </button>
+                                    <% } %>
+
+                                        <button class="d-inline-flex h-75 buttonHelp" onclick="location.href='/cart'">
+                                            <img src="/images/icons/shopping-bag-white"
+                                                class="shoppingBag shoppingBagValid" alt="">
+
+                                            <% if (cart.length> 1) { %>
+                                                <span class="cartItemsNumberText">
+                                                    <%=cart.length-1%>
+                                                </span>
+                                                <span class="cartItemsNumber"></span>
+                                                <% } %>
+
+                                                    <% if (cart.length==1) { %>
+                                                        <span class="cartItemsNumberText" style="visibility: hidden;">
+
+                                                        </span>
+                                                        <span class="cartItemsNumber"
+                                                            style="visibility: hidden;"></span>
+                                                        <% } %>
+
+                                        </button>
+
+                    </div>
+
+                    <button class="navbarCart buttonHelp" onclick="location.href='/cart'">
+                        <% if (cart.length> 1) { %>
+                            <span class="cartItemsNumberTextMobile">
+                                <%=cart.length-1%>
+                            </span>
+                            <span class="cartItemsNumberMobile"></span>
+                            <% } %>
+
+                                <% if (cart.length==1) { %>
+                                    <span class="cartItemsNumberTextMobile" style="visibility: hidden;">
+
+                                    </span>
+                                    <span class="cartItemsNumberMobile" style="visibility: hidden;"></span>
+                                    <% } %>
+
+                                        <img src="/images/icons/shopping-bag" class="shoppingBag" alt="">
+                    </button>
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </nav>
+
+
+    <div class="navbarProfileOptions">
+        <div class="row p-0 m-0 justify-content-center">
+
+            <a href="/personal/profile" class="anchorNoStyle w-100 text-center">
+                <div class="col-11 navbarProfileOption mx-auto navbarProfileOptionFirst text-center">
+                    <img src="/images/icons/user.png" alt="" class="img-fluid navbarProfileOptionIcon">
+                    <h3>Account</h3>
+                </div>
+            </a>
+
+
+            <a href="/personal/profile#orders" class="anchorNoStyle w-100 text-center">
+                <a href="/personal/profile#orders" class="anchorNoStyle w-100 text-center">
+                    <div class="col-11 navbarProfileOption mx-auto text-center">
+                        <img src="/images/icons/order.png" alt=""
+                            class="img-fluid navbarProfileOptionIcon navbarProfileOptionIconOrder">
+                        <h3>Orders</h3>
+                    </div>
+                </a>
+
+
+                <a href="/personal/profile#promos" class="anchorNoStyle w-100 text-center">
+                    <div class="col-11 navbarProfileOption mx-auto text-center">
+                        <img src="/images/icons/promo2.png" alt=""
+                            class="img-fluid navbarProfileOptionIcon navbarProfileOptionIconPromo">
+                        <h3>Promo Codes</h3>
+                    </div>
+                </a>
+
+
+                <a href="/logout" class="anchorNoStyle w-100 text-center">
+                    <div class="col-11 navbarProfileOption mx-auto navbarProfileOptionLast text-center">
+                        <img src="/images/icons/logout.png" alt=""
+                            class="img-fluid navbarProfileOptionIcon navbarProfileOptionLogout">
+                        <h3>Sign Out</h3>
+                    </div>
+                </a>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+<script>
+    const navbarProfileOptions = document.querySelector('.navbarProfileOptions');
+    const buttonAccountNoUser = document.querySelector('.buttonAccountNoUser');
+    const cartItemsNumber = document.querySelector('.cartItemsNumber');
+    const cartItemsNumberText = document.querySelector('.cartItemsNumberText');
+    const cartItemsNumberTextMobile = document.querySelector('.cartItemsNumberTextMobile');
+
+    if (cartItemsNumberText.innerHTML == 1) {
+        cartItemsNumberText.style = "left: 75% !important;"
+    }
+
+    if (cartItemsNumberTextMobile.innerHTML == 1) {
+        cartItemsNumberTextMobile.style = "left: 75% !important;"
+    }
+
+
+    if (!buttonAccountNoUser) {
+        navbarProfileOptions.style = "display: block;"
+    }
+
+
+    let offsetYEA = [0, -5];
+
+    window.addEventListener('resize', function () {
+        let isAtMaxWidth = screen.availWidth - window.innerWidth === 0;
+        if (isAtMaxWidth) {
+            offsetYEA[0] = -1;
+        } else {
+            offsetYEA[0] = 0;
+        }
+
+    })
+
+
+    tippy('#navProfileButton', {
+        content: 'My tooltip!',
+        arrow: false,
+        content: 'heyyyyyyyyyyyyyyy',
+        interactive: true,
+        content: navbarProfileOptions,
+        offset: offsetYEA,
+        placement: 'bottom-end',
+        theme: 'purple',
+        animation: 'shift-toward-extreme',
+
+    });
+
+
+</script>

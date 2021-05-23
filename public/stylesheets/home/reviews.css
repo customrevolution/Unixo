@@ -1,0 +1,160 @@
+#contReviews {
+    margin-top: 75px;
+}
+
+#contReviews h3 {
+    letter-spacing: 5px;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.reviewsAll {
+    width: 90%;
+    height: 450px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 470px;
+    box-shadow: 0 0 7px rgb(172, 170, 170);
+}
+
+.reviewImg {
+    width: 25%;
+    margin: 25px auto;
+    margin-bottom: 0px;
+    border-radius: 50%;
+}
+
+#reviewsRow .card-title {
+    margin-bottom: 11px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+#reviewsRow .card-body {
+    padding-top: 12.5px;
+}
+
+#contReviews .card-text {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+}
+
+.stars {
+    width: 35%;
+    margin-bottom: 11px;
+}
+
+.googleLogoImg {
+    width: 6%;
+}
+
+.reviewsDate {
+    font-size: 15px;
+    margin-left: 8px;   
+    color: gray;
+}
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    #contReviews {
+        width: 90%;
+    }
+
+    .reviewsAll {
+        width: 100%;
+        height: 370px;
+        max-width: 390px;
+    }
+
+    #contReviews .card-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        line-height: 25px;
+    }
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    #contReviews {
+        width: 95%;
+    }
+
+    .reviewsAll {
+        width: 100%;
+        height: 400px;
+        max-width: 350px;
+    }
+
+    #contReviews .card-text {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        line-height: 25px;
+    }
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* .reviewsAll {
+        width: 100%;
+        height: 410px;
+        max-width: 400px;
+    } */
+
+    .reviewsAll {
+        width: 100%;
+        height: 340px;
+        max-width: 400px;
+    }
+    
+    /* #contReviews {
+        width: 90%;
+    } */
+
+    #contReviews {
+        width: 90%;
+    }
+
+    /* #contReviews .card-text {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        line-height: 25px;
+    }
+     */
+    #contReviews .card-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        line-height: 18px;
+    }
+    
+}
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1450px) {
+    .reviewsAll {
+        width: 100%;
+        height: 380px;
+        max-width: 400px;
+    }
+    
+    #contReviews {
+        width: 60%;
+    }
+
+    #contReviews .card-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        line-height: 25px;
+    }
+    
+}
+
