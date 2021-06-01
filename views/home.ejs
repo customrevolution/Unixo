@@ -346,6 +346,10 @@
 
         const homeKicks = document.querySelectorAll('.homepageKicks');
 
+        for (let i = 0; i < homeKicks.length; i++) {
+            homeKicks[i].style = `height: ${homeKicks[i].clientWidth}px`
+        }
+
         homeKicks[0].addEventListener('mouseover', function () {
             console.log('in!!!')
             homeKicks[0].src = '/images/kicks/69001/2.jpg';
