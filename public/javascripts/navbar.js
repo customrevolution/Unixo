@@ -16,8 +16,6 @@ const navbar = document.querySelector('.navbar');
 
 if (navEnter) {
 
-
-
     navbar.addEventListener('mouseenter', function () {
         navbar.classList.remove('navbar-dark', 'bg-transparent');
         navbar.classList.add('navbar-light', 'bg-light', 'navbar-border');

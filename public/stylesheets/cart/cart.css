@@ -295,7 +295,7 @@
 
 .progressH1 {
     position: absolute;
-    top: 25%;
+    top: 8%;
     left: 11%;
     color: white;
     text-shadow: 1px 1px 1px black;
@@ -304,14 +304,14 @@
 
 .progressH2 {
     position: absolute;
-    top: 25%;
+    top: 8%;
     left: 40%;
     /* text-shadow: 1px 1px 1px black; */
 }
 
 .progressH3 {
     position: absolute;
-    top: 25%;
+    top: 8%;
     left: 75%;
     /* text-shadow: 1px 1px 1px black; */
 }
@@ -595,7 +595,7 @@
 
     .progress {
         width: 1245px;
-        height: 60px;
+        height: 35px;
     }
 
     .checkoutHeading {
