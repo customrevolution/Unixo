@@ -11,14 +11,19 @@
         <nav class="row sidebarRowMain">
 
             <div class="col-12 sidebarButton">
-                <a href="/personal/profile" class="sidebarLink">
-                    <% if (currentUser) { %>
+
+                <% if (currentUser) { %>
+                    <a href="/personal/profile" class="sidebarLink">
                         <%=currentUser.username%>
-                            <% } else { %>
-                                Моят акаунт
-                                <% }%>
-                </a>
-                <hr class="sidebarHr">
+                    </a>
+
+                    <% } else { %>
+                        <a href="/register" class="sidebarLink">
+                            Account
+                        </a>
+                        <% }%>
+
+                            <hr class="sidebarHr">
             </div>
 
             <div class="col-12 sidebarButton">
@@ -32,13 +37,31 @@
             </div>
 
             <div class="col-12 sidebarButton">
-                <a href="/personal/profile#orders" class="sidebarLink">Orders</a>
-                <hr class="sidebarHr">
+                <% if (currentUser) { %>
+                    <a href="/personal/profile#orders" class="sidebarLink">
+                        Orders
+                    </a>
+
+                    <% } else { %>
+                        <a href="/register" class="sidebarLink">
+                            Orders
+                        </a>
+                        <% }%>
+                            <hr class="sidebarHr">
             </div>
 
             <div class="col-12 sidebarButton">
-                <a href="/personal/profile#promos" class="sidebarLink">Promo Codes</a>
-                <hr class="sidebarHr">
+                <% if (currentUser) { %>
+                    <a href="/personal/profile#promos" class="sidebarLink">
+                        Promo Codes
+                    </a>
+
+                    <% } else { %>
+                        <a href="/register" class="sidebarLink">
+                            Promo Codes
+                        </a>
+                        <% }%>
+                            <hr class="sidebarHr">
             </div>
 
             <div class="col-12 sidebarFindUs">
