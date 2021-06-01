@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate')%>
     <div class="row m-0 profilePage">
-        <img src="/images/users/register1.jpg" alt="" class="img-fluid">
+        <img src="/images/users/register1.jpg" alt="" class="img-fluid userBackground">
     </div>
 
     <div class="row m-0 profilePage2 justify-content-center">
@@ -26,11 +26,9 @@
                 </div>
             </div>
 
-            <div class=" row profileDetailsData justify-content-center px-4">
-                <div class="col-12 col-sm-10 col-md-8 text-center mt-3">
-                    <h2 class="text-center">
-                        <%=currentUser.username%>
-                    </h2>
+            <div class=" row profileDetailsData m-0 justify-content-center px-4">
+                <div class="col-12 col-md-11 text-center mt-4 p-0">
+
                     <form action="/personal/profile/data" method="POST" class="userDataForm" novalidate>
 
                         <div class="form-group dataFirstName">
@@ -89,7 +87,7 @@
                             <h2>Oops...</h2>
                             <h3 class="m-0">It seems like you haven't made your <br> first order yet.</h3>
                             <img src="/images/gifs/heart.gif" alt="" class="img-fluid" style="width: 120px;">
-                            <h3 class="mt-2">Pick something cool and <br> use the code </h3>
+                            <h3 class="mt-2">Use the promo code </h3>
                             <h3 class="discountCodeFive">FIRST5</h3>
                             <h3>for 5% off!</h3>
 
@@ -194,7 +192,7 @@
                                                 style="margin-top: 20px !important;">
                                                 <h1>Имаш <%= currentUser.discount%>% отстъпка <br> на всичко!</h1>
                                                 <img src="/images/gifs/happy.gif" alt="" class="img-fluid"
-                                                    style="width: 220px;">
+                                                    style="width: 190px;">
                                                 <p>Отстъпката се прилага <br> автоматично при добавяне в <br> кошницата!
                                                 </p>
                                                 <div class="buttonViewShop2" id="buttonViewShopYea"
@@ -224,10 +222,25 @@
         const profileDetailsOrders = document.querySelector('.profileDetailsOrders')
         const profileDetailsPromos = document.querySelector('.profileDetailsPromos')
         const profileDetailsBag = document.querySelector('.profileDetailsBag')
+        const profileDetails = document.querySelector('.profileDetails')
+        const profilePage = document.querySelector('.profilePage')
+        const profilePage2 = document.querySelector('.profilePage2')
+        const userBackground = document.querySelector('.userBackground')
 
+        // document.querySelector('.profileDetails').style = `height: ${profileDetailsData.clientHeight + 230}px;`
 
+        window.addEventListener('resize', function () {
 
+            if (window.matchMedia("(min-width: 576px)").matches) {
+                profileDetails.style = "height: 700px;"
+            }
 
+            if (!window.matchMedia("(min-width: 576px)").matches) {
+                profileDetails.style = "height: 700px;"
+                profileDetails.style = "height: 800px;"
+            }
+
+        })
 
 
         profileDetailsData.classList.add('opacityOne');
@@ -238,6 +251,17 @@
             profileSettingBag.classList.remove('profileSettingActive');
 
             profileSettingData.classList.add('profileSettingActive');
+
+            if (!window.matchMedia("(min-width: 576px)").matches) {
+                profileDetails.style = "height: 800px;"
+                profilePage.style = "height: 1000px;"
+                profilePage2.style = "height: 1000px;"
+                userBackground.style = "height: 1000px;"
+            }
+
+            if (window.matchMedia("(min-width: 576px)").matches) {
+                profileDetails.style = "height: 700px;"
+            }
 
 
             profileDetailsData.classList.remove('displayNone');
@@ -258,6 +282,9 @@
 
             profileSettingOrders.classList.add('profileSettingActive');
 
+            profileDetails.style = "height: 680px;"
+
+
             profileDetailsOrders.classList.remove('displayNone');
             setTimeout(function () {
                 profileDetailsOrders.classList.add('opacityOne');
@@ -275,6 +302,8 @@
             profileSettingBag.classList.remove('profileSettingActive');
 
             profileSettingPromos.classList.add('profileSettingActive');
+
+            profileDetails.style = "height: 700px;"
 
             profileDetailsPromos.classList.remove('displayNone');
             setTimeout(function () {
