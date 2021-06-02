@@ -26,17 +26,10 @@
     transform: translate(-50%, -50%);
 }
 
-.cartImageHeader h2 {  
-    font-size: 24px;
-    color: white;
-    text-shadow: 1.5px 1.5px 3px black;
-    margin: 0;
-    margin-bottom: 0px;
-    text-transform: uppercase;
-}
-
 .cartImageHeader h1 {  
     color: white;
+    text-transform: uppercase;
+    font-weight: 800;
     font-size: 50px;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -507,6 +500,9 @@
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
+    .cartImageHeader h1 {  
+        font-size: 62.5px;
+    }
 
     .chartProduct {
         position: absolute;

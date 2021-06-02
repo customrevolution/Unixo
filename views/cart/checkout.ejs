@@ -5,7 +5,6 @@
             <img src="/images/collections/resized/collection2_2.jpg" alt="" class="img-fluid">
         </div>
         <div class="cartImageHeader text-center">
-            <h2>Unixo</h2>
             <h1>Кошница</h1>
         </div>
     </div>
@@ -233,7 +232,7 @@
                             <h3 class="cartSummaryHeading text-center">Summary</h3>
                             <div class="cartTotals">
                                 <% for (let i=1; i < cart.length; i++) { %>
-                                    <div class="cartSubTotal">
+                                    <div class="cartSubTotal w-100 d-flex justify-content-between">
                                         <p class="cartSummaryTitle"
                                             style="color: rgb(95, 95, 95); letter-spacing: 2.4px;">
                                             <%=cart[i].name%>
