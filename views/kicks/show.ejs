@@ -2,8 +2,8 @@
 
 
 
-    <% let counter=36, counterSelect=36%>
-        <% let counterMobile=36%>
+    <% let counter=37, counterSelect=37%>
+        <% let counterMobile=37%>
             <div class="shopShowContainer align-items-center">
 
 
@@ -174,12 +174,12 @@
                                         <select id="shopSizingSelect" class="footerFormEmail custom-select decorated"
                                             name="item[size]" required>
                                             <option selected value="">Choose...</option>
-                                            <% for (let i=0; i < 20; i++) { %>
+                                            <% for (let i=0; i < 9; i++) { %>
                                                 <option class="sizingSelectSingle text-center"
                                                     value="<%=counterSelect%>" name="item[size]">EU
                                                     <%=counterSelect%>
                                                 </option>
-                                                <%counterSelect +=0.5%>
+                                                <%counterSelect +=1%>
                                                     <% } %>
 
                                         </select>
@@ -224,7 +224,7 @@
                                         </h5>
 
                                         <div class="text-center shopShowSizingButtons">
-                                            <% for (let a=0; a < 20; a++) { %>
+                                            <% for (let a=0; a < 9; a++) { %>
                                                 <input class="sizingOptionDesktop form-control" type="radio"
                                                     name="item[size]" id="size<%=counter%>" value="<%=counter%>"
                                                     required>
@@ -235,7 +235,7 @@
                                                 </label>
 
 
-                                                <% counter +=0.5%>
+                                                <% counter +=1%>
                                                     <% } %>
                                                         <input class="orderInfoHelper" type="text"
                                                             value="<%=kick.shopId%>" name="item[shopId]"

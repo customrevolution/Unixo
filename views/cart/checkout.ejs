@@ -243,7 +243,7 @@
                                         </p>
                                     </div>
                                     <% } %>
-                                        <div class="cartSubTotal mt-2">
+                                        <div class="cartSubTotal w-100 d-flex justify-content-between mt-2">
                                             <p class="cartSummaryTitle">SUB TOTAL</p>
                                             <p class="floatRight">
                                                 $<%=cartTotal%>.00
@@ -253,7 +253,7 @@
 
                                         <% if (currentUser) { %>
                                             <% if (currentUser.discount) { %>
-                                                <div class="cartDiscount">
+                                                <div class="cartDiscount w-100 d-flex justify-content-between">
                                                     <p class="cartSummaryTitle">DISCOUNT <%=currentUser.discount%>%</p>
                                                     <p class="floatRight">
                                                         <%=(cartTotal /currentUser.discount)%>
@@ -261,12 +261,12 @@
                                                 </div>
                                                 <% } %>
                                                     <% } %>
-                                                        <div class="cartShipping">
+                                                        <div class="cartShipping w-100 d-flex justify-content-between">
                                                             <p class="cartSummaryTitle">DELIVERY</p>
                                                             <p class="floatRight">$0.00</p>
                                                         </div>
 
-                                                        <div class="cartTotal">
+                                                        <div class="cartTotal w-100 d-flex justify-content-between">
                                                             <p class="cartSummaryTitle">TOTAL</p>
                                                             <p class="floatRight">$<%= cartTotal %>.00</p>
                                                         </div>
