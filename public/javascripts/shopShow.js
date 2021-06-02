@@ -27,20 +27,31 @@ for (let i = 0; i < swiperShopShowImg.length; i++) {
 
 let shopShowRowHeight = shopShowRow.clientHeight;
 
-if (!window.matchMedia("(min-width: 992px)").matches) {
-    shopShowBackground.style = `height: ${shopShowRowHeight + 250}px !important`
-    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
-}
+setTimeout(function () {
+    if (!window.matchMedia("(min-width: 992px)").matches) {
+        shopShowBackground.style = `height: ${shopShowRowHeight + 250}px !important`
+        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+    }
+}, 1)
 
-if (window.matchMedia("(min-width: 992px)").matches) {
-    shopShowBackground.style = `height: ${shopShowRowHeight + 450}px !important`
-    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
-}
+setTimeout(function () {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+        shopShowBackground.style = `height: ${shopShowRowHeight + 450}px !important`
+        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+    }
 
-if (window.matchMedia("(min-width: 1105px)").matches) {
-    shopShowBackground.style = `height: ${shopShowRowHeight + 100}px !important`
-    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
-}
+}, 2)
+
+setTimeout(function () {
+    if (window.matchMedia("(min-width: 1105px)").matches) {
+        shopShowBackground.style = `height: ${shopShowRowHeight + 200}px !important`
+        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+    }
+}, 3)
+
+
+
+
 
 window.addEventListener('resize', function () {
     shopShowRowHeight = shopShowRow.clientHeight;
