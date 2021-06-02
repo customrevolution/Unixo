@@ -29,6 +29,7 @@
             <div class=" row profileDetailsData m-0 justify-content-center px-4">
                 <div class="col-12 col-md-11 text-center mt-4 p-0">
 
+
                     <form action="/personal/profile/data" method="POST" class="userDataForm" novalidate>
 
                         <div class="form-group dataFirstName">
@@ -71,7 +72,7 @@
 
                         <button class="buttonSignIn buttonFormSignIn mt-3" type="submit">
                             <div class="circleSignIn"></div>
-                            <span href="#">Save</span>
+                            <span href="">Save</span>
                         </button>
                     </form>
                 </div>
@@ -190,15 +191,16 @@
 
                                             <div class="col-12 text-center discountActive"
                                                 style="margin-top: 20px !important;">
-                                                <h1>Имаш <%= currentUser.discount%>% отстъпка <br> на всичко!</h1>
+                                                <h1>You have a <%= currentUser.discount%>% discount <br> on everything!
+                                                </h1>
                                                 <img src="/images/gifs/happy.gif" alt="" class="img-fluid"
                                                     style="width: 190px;">
-                                                <p>Отстъпката се прилага <br> автоматично при добавяне в <br> кошницата!
+                                                <p>The discount will be applied <br> automatically on <br> checkout!
                                                 </p>
                                                 <div class="buttonViewShop2" id="buttonViewShopYea"
                                                     onclick="location.href='/shop/collections'">
                                                     <div id="slideViewShop"></div>
-                                                    <span href="#">Виж колекциите</span>
+                                                    <span href="#">Continue Shopping</span>
                                                 </div>
                                             </div>
                                             <% } %>

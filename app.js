@@ -67,6 +67,11 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+// passport.use(new LocalStrategy({
+//     usernameField: 'email',
+//     passwordField: 'password'
+// }, User.authenticate()));
+
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -275,8 +280,8 @@ app.post('/personal/profile/data', isLoggedIn, catchAsync(async (req, res) => {
 
     let updatedUser = await User.findOneAndUpdate({ _id: req.user._id }, update, { new: true });
     update = {};
-    console.log(updatedUser);
-    res.send(updatedUser);
+    req.flash('success', `Successfully saved your data!`)
+    res.redirect('/personal/profile#data');
 }));
 
 
