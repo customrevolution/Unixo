@@ -4,14 +4,20 @@
 
 
 <h2>How to check out the project</h2>
-<p>To install this project on your computer, clone the repository and install dependencies.
+
+<p>The app is hosted on heroku, so you can see it directly on https://unixo.herokuapp.com</p>
+<p>OR</p>
+<p>To install this project on your computer, clone the repository, install dependencies
+  and run the app on NodeJS.
 </p>
 
 ```
-$ git clone git@github.com:passport/express-4.x-facebook-example.git
-$ cd express-4.x-facebook-example
+$ git clone https://github.com/customrevolution/unixo
+$ cd unixo
 $ npm install
+$ node app.js
 ```
+<p>Open a web browser and navigate to http://localhost:3000/ to see the example in action.</p>
 
 
 
