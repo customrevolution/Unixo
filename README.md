@@ -17,7 +17,7 @@ $ cd unixo
 $ npm install
 $ node app.js
 ```
-<p>Open a web browser and navigate to http://localhost:3000/ to see the example in action.</p>
+<p>Open a web browser and navigate to http://localhost:3000/ to see the website.</p>
 
 
 
