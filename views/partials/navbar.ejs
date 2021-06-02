@@ -11,6 +11,16 @@
         <nav class="row sidebarRowMain">
 
             <div class="col-12 sidebarButton">
+                <a href="/shop/collections" class="sidebarLink">Collections</a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarButton">
+                <a href="/faq" class="sidebarLink">FAQ</a>
+                <hr class="sidebarHr">
+            </div>
+
+            <div class="col-12 sidebarButton">
 
                 <% if (currentUser) { %>
                     <a href="/personal/profile" class="sidebarLink">
@@ -26,15 +36,7 @@
                             <hr class="sidebarHr">
             </div>
 
-            <div class="col-12 sidebarButton">
-                <a href="/shop/collections" class="sidebarLink">Collections</a>
-                <hr class="sidebarHr">
-            </div>
 
-            <div class="col-12 sidebarButton">
-                <a href="/faq" class="sidebarLink">Questions & Answers</a>
-                <hr class="sidebarHr">
-            </div>
 
             <div class="col-12 sidebarButton">
                 <% if (currentUser) { %>
@@ -64,22 +66,35 @@
                             <hr class="sidebarHr">
             </div>
 
-            <div class="col-12 sidebarFindUs">
-                <a href="#" class="sidebarLink">Contacts</a>
-                <ul class="linkList sidebarMargin">
-                    <li><i class="fas fa-phone-alt footerIcon"></i> Phone: <a href="tel:089 013 6562"
-                            class="sidebarClickable">
-                            089 0136 562</a></li>
-                    <li><i class="fas fa-phone-alt footerIcon"></i> Phone: <a href="tel:089 277 7709"
-                            class="sidebarClickable">
-                            089 2777 709</a></li>
-                    <li><i class="far fa-envelope footerIcon"></i> E-Mail: <a href="mailto:sales@unixo.com"
-                            class="sidebarClickable">
-                            sales@unixo.com </a></li>
-                </ul>
-            </div>
+            <% if (currentUser) { %>
+                <div class="col-12 sidebarButton">
 
-            <!-- <div class="col-12 sidebarSocial">
+
+                    <a href="/logout" class="sidebarLink">
+                        Logout
+                    </a>
+                    <hr class="sidebarHr">
+
+
+                </div>
+                <% } %>
+
+                    <div class="col-12 sidebarFindUs">
+                        <a href="#" class="sidebarLink">Contacts</a>
+                        <ul class="linkList sidebarMargin">
+                            <li><i class="fas fa-phone-alt footerIcon"></i> Phone: <a href="tel:089 013 6562"
+                                    class="sidebarClickable">
+                                    089 0136 562</a></li>
+                            <li><i class="fas fa-phone-alt footerIcon"></i> Phone: <a href="tel:089 277 7709"
+                                    class="sidebarClickable">
+                                    089 2777 709</a></li>
+                            <li><i class="far fa-envelope footerIcon"></i> E-Mail: <a href="mailto:sales@unixo.com"
+                                    class="sidebarClickable">
+                                    sales@unixo.com </a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="col-12 sidebarSocial">
                 <a href="#" class="sidebarLink">Follow</a>
                 <ul class="sidebarLinkList">
                     <li class="sidebarIcon">
@@ -95,7 +110,7 @@
                     </li>
                 </ul>
             </div> -->
-            <!-- 
+                    <!-- 
             <div class="col-12">
                 <form action="/newsletter" method="POST" id="sidebarNewsletter" class="needs-validation" novalidate>
                     <h3 class="sidebarLink">Newsletter</h3>
@@ -107,13 +122,13 @@
                             name="emailNewsletter" aria-describedby="emailHelp" placeholder="Enter your email address"
                             required> -->
 
-            <!-- <div class="buttonSubmitSidebar" id="buttonSubmitSidebar2"
+                    <!-- <div class="buttonSubmitSidebar" id="buttonSubmitSidebar2"
                             onclick="document.querySelector('#sidebarNewsletter').submit();">
                             <div id="slideSubmitSidebar"></div>
                             <a href="#">Subscribe</a>
                         </div> -->
 
-            <!-- <button class="buttonSubmitSidebar" id="buttonSubmitSidebar2" type="submit">
+                    <!-- <button class="buttonSubmitSidebar" id="buttonSubmitSidebar2" type="submit">
                             <div id="slideSubmitSidebar"></div>
                             <span href="#">Subscribe</span>
                         </button>
@@ -149,7 +164,7 @@
                             </li>
 
                             <li class="navbarListItem">
-                                <a class="navbarLink navbarClickable" href="/faq">Questions & Answers</a>
+                                <a class="navbarLink navbarClickable" href="/faq">FAQ</a>
                             </li>
 
                             <li class="navbarListItem" style="visibility: hidden;">

@@ -28,21 +28,16 @@ for (let i = 0; i < swiperShopShowImg.length; i++) {
 let shopShowRowHeight = shopShowRow.clientHeight;
 
 if (!window.matchMedia("(min-width: 992px)").matches) {
-    if (window.matchMedia("(max-width: 1114px")) {
-        shopShowBackground.style = `height: ${shopShowRowHeight}px !important`
-        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
-    }
-
+    shopShowBackground.style = `height: ${shopShowRowHeight + 250}px !important`
+    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
 }
 
 if (window.matchMedia("(min-width: 992px)").matches) {
     shopShowBackground.style = `height: ${shopShowRowHeight + 450}px !important`
-
     shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
 }
 
-
-if (window.matchMedia("(min-width: 1114px")) {
+if (window.matchMedia("(min-width: 1105px)").matches) {
     shopShowBackground.style = `height: ${shopShowRowHeight + 100}px !important`
     shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
 }
@@ -59,6 +54,7 @@ window.addEventListener('resize', function () {
         shopShowBackground.style = `height: ${shopShowRowHeight + 450}px !important`
         shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
     }
+
 
 })
 
