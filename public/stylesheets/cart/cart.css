@@ -1,7 +1,6 @@
 .shoppingCart {
     /* padding-top: 100px !important; */
     padding-bottom: 35px;
-    background-color: rgb(232, 240, 255);
 }
 
 .cartImage {
@@ -404,8 +403,6 @@
         margin-left: 15px;
         margin-right: 15px;
         /* min-height: 70vh; */
-        background-color: #dbe8ff;
-        /* background-color: #e2fffd; */
     }
 
     .shoppingLine {
@@ -684,7 +681,7 @@
     /* left: -200px; */
     left: -260px;
     /* background: #BFC0C0; */
-    background: #e8f0ff;
+    background: white;
     position: absolute;
     transition: all .35s ease-Out;
     bottom: 0;
@@ -740,7 +737,7 @@
     /* left: -200px; */
     left: -100%;
     /* background: #BFC0C0; */
-    background: #e8f0ff;
+    background: white;
     position: absolute;
     transition: all .35s ease-Out;
     bottom: 0;

@@ -94,6 +94,9 @@
 }
 
 .wholeCollectionHeader h3 {
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 1px 3px 1px black;
     color: white;
     font-size: 60px;
     font-family: 'Roboto Slab'
@@ -294,14 +297,19 @@
 }
 
 .shopShowCollectionMobile {
-    margin-top: 133px;
+    margin-top: 90px;
     margin-left: 0;
     margin-right: 0;
 }
 
 .shopShowCollectionMobile h2 {
-    margin-bottom: 30px;
+    text-align: center;
+    color: white !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 40px;
     font-size: 9vw;
+    text-shadow: 2px 3px 1px black;
     color:rgb(0, 0, 0);
 }
 
@@ -1214,8 +1222,7 @@
     }
 
     .wholeCollectionHeader {
-        margin-top: 50px !important;
-
+        margin-top: 80px !important;
     }
  
     .wholeCollectionHeader h3 {
@@ -1264,7 +1271,7 @@
 
     
     .wholeCollectionHeader {
-        margin-bottom: 20px !important;
+        margin-bottom: 40px !important;
     }
 }
 /* XX-Large devices (larger desktops, 1400px and up) */

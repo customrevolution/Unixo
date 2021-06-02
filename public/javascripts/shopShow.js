@@ -14,6 +14,7 @@ const shopShowMainImage = document.querySelector('.shopShowMainImage');
 const swiperShopShowImg = document.querySelectorAll('.swiperShopShowImg');
 
 const shopShowContainer = document.querySelector('.shopShowContainer');
+const shopShowRow = document.querySelector('.shopShowRow');
 const shopShowBackground = document.querySelector('.shopShowBackground');
 
 let sizeSelected, sizeSelectedMobile, currentCollection;
@@ -24,12 +25,31 @@ for (let i = 0; i < swiperShopShowImg.length; i++) {
     })
 }
 
-let shopShowContainerHeight = shopShowContainer.clientHeight;
-shopShowBackground.style = `height: ${shopShowContainerHeight}px`
+let shopShowRowHeight = shopShowRow.clientHeight;
+
+if (!window.matchMedia("(min-width: 992px)").matches) {
+    shopShowBackground.style = `height: ${shopShowRowHeight + 250}px !important`
+    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+}
+
+if (window.matchMedia("(min-width: 992px)").matches) {
+    shopShowBackground.style = `height: ${shopShowRowHeight + 100}px !important`
+    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+}
 
 window.addEventListener('resize', function () {
-    shopShowContainerHeight = shopShowContainer.clientHeight;
-    shopShowBackground.style = `height: ${shopShowContainerHeight}px`
+    shopShowRowHeight = shopShowRow.clientHeight;
+
+    if (!window.matchMedia("(min-width: 992px)").matches) {
+        shopShowBackground.style = `height: ${shopShowRowHeight + 250}px !important`
+        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+    }
+
+    if (window.matchMedia("(min-width: 992px)").matches) {
+        shopShowBackground.style = `height: ${shopShowRowHeight + 450}px !important`
+        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+    }
+
 })
 
 

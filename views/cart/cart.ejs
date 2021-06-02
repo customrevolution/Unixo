@@ -1,233 +1,239 @@
 <% layout('layouts/boilerplate')%>
 
-    <div class="row cartImageRow m-0">
-        <div class="col-12 cartImage p-0">
-            <img src="/images/collections/resized/collection2_2.jpg" alt="" class="img-fluid">
-        </div>
-        <div class="cartImageHeader text-center">
-            <h2>Unixo</h2>
-            <h1>Кошница</h1>
-        </div>
-    </div>
-
-    <div class="row shoppingCart justify-content-center m-0">
-
-        <div class="progress">
-            <h3 class="progressH1">1. Overview</h3>
-            <h3 class="progressH2">2. Delivery Options</h3>
-            <h3 class="progressH3">3. Order Review</h3>
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="33"
-                aria-valuemin="0" aria-valuemax="100" style="width: 33%"></div>
-        </div>
-
-
-        <div class="cartHeading col-12 px-2">
-            <h2 class="shoppingCartHeader">КОШНИЦА</h2>
-            <div class="buttonCartProceed" id="buttonCartProceed2"
-                onclick="javascript: location.href = '/cart/checkout'">
-                <div id="slideCartProceed"></div>
-                <a href="/cart/checkout">Continue</a>
+    <% let cartTotalAll=0;%>
+        <% for (let i=0; i < cart.length; i++) { cartTotalAll +=cart[0].price } %>
+            <div class="row cartImageRow m-0">
+                <div class="col-12 cartImage p-0">
+                    <img src="/images/collections/resized/collection2_2.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="cartImageHeader text-center">
+                    <h2>Unixo</h2>
+                    <h1>Кошница</h1>
+                </div>
             </div>
-            <hr style="width: 100%;" class="shoppingLine">
-        </div>
+
+            <div class="row shoppingCart justify-content-center m-0">
+
+                <div class="progress">
+                    <h3 class="progressH1">1. Overview</h3>
+                    <h3 class="progressH2">2. Delivery Options</h3>
+                    <h3 class="progressH3">3. Order Review</h3>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%"></div>
+                </div>
 
 
-
-        <% if (cart.length>1) { %>
-
-            <div class="cartOrderItems col-12 col-lg-7 col-xl-8 px-2">
-                <p class="chartProduct chartCategory">Item</p>
-                <p class="chartDescription chartCategory">Description</p>
-                <p class="chartSize chartCategory">Size</p>
-                <p class="chartPrice chartCategory">Price</p>
-                <hr style="width: 100%;" class="shoppingLine2">
-
-                <% for (i=1; i < cart.length; i++) {%>
-
-                    <div class="cartItem">
-                        <form action="/cart" method="POST">
-                            <input type="hidden" name="index" value="<%=i%>">
-                            <button class="cartItemClose" type="submit">&#10006</button>
-                        </form>
-                        <img src="<%=cart[i].image[0]%>" alt="" class="img-fluid">
-                        <div class="cartItemDetails">
-                            <h4 class="chartDescription2">
-                                <%=cart[i].name%>
-                            </h4>
-                            <h5 class="chartDescription3">
-                                AIR FORCE 1 LOW
-                            </h5>
-                            <p class="cartItemSize">EU <%=cart[i].size%>
-                            </p>
-                            <p class="chartSize2">EU <%=cart[i].size%>
-                            </p>
-                            <div class="priceBubble">
-                                <p class="cartItemPrice">
-                                    <%=cart[i].price%>.00 лв.
-                                </p>
-                            </div>
-
-                            <p class="chartPrice2">
-                                <%= cart[i].price %>.00 лв.
-                            </p>
-                        </div>
-
-
+                <div class="cartHeading col-12 px-2">
+                    <h2 class="shoppingCartHeader">КОШНИЦА</h2>
+                    <div class="buttonCartProceed" id="buttonCartProceed2"
+                        onclick="javascript: location.href = '/cart/checkout'">
+                        <div id="slideCartProceed"></div>
+                        <a href="/cart/checkout">Continue</a>
                     </div>
-                    <hr style="width: 100%;">
-                    <% } %>
-            </div>
+                    <hr style="width: 100%;" class="shoppingLine">
+                </div>
 
-            <% } %>
 
-                <% if (cart.length==1) { %>
+
+                <% if (cart.length>1) { %>
 
                     <div class="cartOrderItems col-12 col-lg-7 col-xl-8 px-2">
-                        <p class="chartProduct chartCategory" style="top: -6% !important;">Модел</p>
-                        <p class="chartDescription chartCategory" style="top: -6% !important;">Описание</p>
-                        <p class="chartSize chartCategory" style="top: -6% !important;">Размер</p>
-                        <p class="chartPrice chartCategory" style="top: -6% !important;">Цена</p>
+                        <p class="chartProduct chartCategory">Item</p>
+                        <p class="chartDescription chartCategory">Description</p>
+                        <p class="chartSize chartCategory">Size</p>
+                        <p class="chartPrice chartCategory">Price</p>
                         <hr style="width: 100%;" class="shoppingLine2">
 
-                        <h2 style="font-size: 28px;" class="mt-5">Shopping bag is empty.</h2>
+                        <% for (i=1; i < cart.length; i++) {%>
 
-                        <div class="buttonCartProceed2" id="buttonCartProceed3" style="width: 220px;"
-                            onclick="javascript: location.href = '/shop/collections' ">
-                            <div id="slideCartProceed2"></div>
-                            <a style="font-size: 15px !important;">Continue Shopping</a>
-                        </div>
+                            <div class="cartItem">
+                                <form action="/cart" method="POST">
+                                    <input type="hidden" name="index" value="<%=i%>">
+                                    <button class="cartItemClose" type="submit">&#10006</button>
+                                </form>
+                                <img src="<%=cart[i].image[0]%>" alt="" class="img-fluid">
+                                <div class="cartItemDetails">
+                                    <h4 class="chartDescription2">
+                                        <%=cart[i].name%>
+                                    </h4>
+                                    <h5 class="chartDescription3">
+                                        AIR FORCE 1 LOW
+                                    </h5>
+                                    <p class="cartItemSize">EU <%=cart[i].size%>
+                                    </p>
+                                    <p class="chartSize2">EU <%=cart[i].size%>
+                                    </p>
+                                    <div class="priceBubble">
+                                        <p class="cartItemPrice">
+                                            <%=cart[i].price%>.00 лв.
+                                        </p>
+                                    </div>
+
+                                    <p class="chartPrice2">
+                                        <%= cart[i].price %>.00 лв.
+                                    </p>
+                                </div>
 
 
-
+                            </div>
+                            <hr style="width: 100%;">
+                            <% } %>
                     </div>
-
 
                     <% } %>
 
-                        <div class="cartSummaryAll col-12 col-lg-5 col-xl-4 px-2">
+                        <% if (cart.length==1) { %>
 
+                            <div class="cartOrderItems col-12 col-lg-7 col-xl-8 px-2">
+                                <p class="chartProduct chartCategory" style="top: -6% !important;">Модел</p>
+                                <p class="chartDescription chartCategory" style="top: -6% !important;">Описание</p>
+                                <p class="chartSize chartCategory" style="top: -6% !important;">Размер</p>
+                                <p class="chartPrice chartCategory" style="top: -6% !important;">Цена</p>
+                                <hr style="width: 100%;" class="shoppingLine2">
 
-                            <% if (cart.length> 1) { %>
+                                <h2 style="font-size: 28px;" class="mt-5">Shopping bag is empty.</h2>
 
-                                <div class="cartSummary p-3">
-                                    <h3 class="cartSummaryHeading text-center">Summary</h3>
-                                    <div class="cartTotals">
-                                        <% for (let i=1; i < cart.length; i++) { %>
-                                            <div class="cartSubTotal">
-                                                <p class="cartSummaryTitle"
-                                                    style="color: rgb(95, 95, 95); letter-spacing: 2.4px;">
-                                                    <%=cart[i].name%>
-                                                        <span style="color: rgb(41, 41, 41);">&nbsp; × 1 </span>
-                                                </p>
-                                                <p class="floatRight">
-                                                    $<%=cart[i].price%>.00
-                                                </p>
-                                            </div>
-                                            <% } %>
-
-                                                <div class="cartSubTotal">
-                                                    <p class="cartSummaryTitle">SUB TOTAL</p>
-                                                    <p class="floatRight">
-                                                        $<%=cartTotal%>.00
-                                                    </p>
-                                                </div>
-
-                                                <hr style="width: 100%; margin-top: 2.5px; margin-bottom: 7.5px;">
-
-                                                <% if (currentUser) { %>
-                                                    <% if (currentUser.discount) { %>
-                                                        <div class="cartDiscount">
-                                                            <p class="cartSummaryTitle">DISCOUNT
-                                                                <%=currentUser.discount%>%
-                                                            </p>
-                                                            <p class="floatRight">
-                                                                $<%=(cartTotal /currentUser.discount)%>.00
-                                                            </p>
-                                                        </div>
-                                                        <% } %>
-                                                            <% } %>
-                                                                <div class="cartShipping">
-                                                                    <p class="cartSummaryTitle">DELIVERY</p>
-                                                                    <p class="floatRight">$0.00</p>
-                                                                </div>
-
-                                                                <div class="cartTotal">
-                                                                    <p class="cartSummaryTitle">TOTAL</p>
-                                                                    <% if (currentUser && currentUser.discount) { %>
-                                                                        <p class="floatRight">
-                                                                            $<%=cartTotal - (cartTotal
-                                                                                /currentUser.discount)%>.00
-                                                                        </p>
-                                                                        <% } %>
-                                                                            <% if (!currentUser) { %>
-                                                                                <p class="floatRight">
-                                                                                    $<%=cartTotal%>.00
-                                                                                </p>
-                                                                                <% } %>
-                                                                </div>
-                                    </div>
-
-                                    <div class="buttonCartProceed2" id="buttonCartProceed3"
-                                        onclick="javascript: location.href = '/cart/checkout'">
-                                        <div id="slideCartProceed2"></div>
-                                        <a href="/cart/checkout">Continue</a>
-                                    </div>
+                                <div class="buttonCartProceed2" id="buttonCartProceed3" style="width: 220px;"
+                                    onclick="javascript: location.href = '/shop/collections' ">
+                                    <div id="slideCartProceed2"></div>
+                                    <a style="font-size: 15px !important;">Continue Shopping</a>
                                 </div>
 
-                                <% } %>
 
-                                    <% if (cart.length==1) { %>
 
-                                        <div class="cartSummary2 pt-4">
+                            </div>
 
-                                            <% } %>
 
-                                                <% if (cart.length> 1) { %>
+                            <% } %>
 
-                                                    <div class="cartSummary2 mt-4 pt-4">
+                                <div class="cartSummaryAll col-12 col-lg-5 col-xl-4 px-2">
 
-                                                        <% } %>
-                                                            <h2 class="text-center">COMPLIMENTARY DELIVERY</h2>
-                                                            <hr>
-                                                            <h3>May we help?</h3>
 
-                                                            <p> <i class="fas fa-phone-alt footerIcon"></i><a href="#"
-                                                                    class="contrast">
-                                                                    +359
-                                                                    890 136
-                                                                    562</a> </p>
+                                    <% if (cart.length> 1) { %>
 
-                                                            <p> <i class="far fa-envelope footerIcon"></i><a href="#"
-                                                                    class="contrast">
-                                                                    sales@unixo.com </a> </p>
-                                                            <hr style="margin-top: 20px;">
-
-                                                            <h3>Delivery</h3>
-
-                                                            <p style="display: inline-block;">DHL Express</p>
-                                                            <p
-                                                                style="float:right; display:inline-block; margin-bottom: 0; margin-right: 15px">
-                                                                $0.00</p>
-                                                            <hr style="margin-top: 20px;">
-
-                                                            <h3>Payment</h3>
-
-                                                            <p style="display: inline-block; margin-bottom: 25px;">
-                                                                Cash on Delivery
-                                                            </p>
+                                        <div class="cartSummary p-3">
+                                            <h3 class="cartSummaryHeading text-center">Summary</h3>
+                                            <div class="cartTotals">
+                                                <% for (let i=1; i < cart.length; i++) { %>
+                                                    <div class="cartSubTotal">
+                                                        <p class="cartSummaryTitle"
+                                                            style="color: rgb(95, 95, 95); letter-spacing: 2.4px;">
+                                                            <%=cart[i].name%>
+                                                                <span style="color: rgb(41, 41, 41);">&nbsp; × 1 </span>
+                                                        </p>
+                                                        <p class="floatRight">
+                                                            $<%=cart[i].price%>.00
+                                                        </p>
                                                     </div>
+                                                    <% } %>
 
+                                                        <div class="cartSubTotal w-100 d-flex justify-content-between">
+                                                            <p class="cartSummaryTitle">
+                                                                SUB TOTAL</p>
+                                                            <p class="floatRight">
+                                                                $<%=cartTotal%>.00
+                                                            </p>
+                                                        </div>
+
+                                                        <hr
+                                                            style="width: 100%; margin-top: 2.5px; margin-bottom: 7.5px;">
+
+                                                        <% if (currentUser) { %>
+                                                            <% if (currentUser.discount) { %>
+                                                                <div class="cartDiscount">
+                                                                    <p class="cartSummaryTitle">DISCOUNT
+                                                                        <%=currentUser.discount%>%
+                                                                    </p>
+                                                                    <p class="floatRight">
+                                                                        $<%=(cartTotal /currentUser.discount)%>.00
+                                                                    </p>
+                                                                </div>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <div class="cartShipping">
+                                                                            <p class="cartSummaryTitle">DELIVERY</p>
+                                                                            <p class="floatRight">$0.00</p>
+                                                                        </div>
+
+                                                                        <div class="cartTotal">
+                                                                            <p class="cartSummaryTitle">TOTAL</p>
+                                                                            <% if (currentUser && currentUser.discount)
+                                                                                { %>
+                                                                                <p class="floatRight">
+                                                                                    $<%=cartTotal - (cartTotal /
+                                                                                        currentUser.discount)%>.00
+                                                                                </p>
+                                                                                <% } %>
+                                                                                    <% if (!currentUser) { %>
+                                                                                        <p class="floatRight">
+                                                                                            $<%=cartTotal%>.00
+                                                                                        </p>
+                                                                                        <% } %>
+                                                                        </div>
+                                            </div>
+
+                                            <div class="buttonCartProceed2" id="buttonCartProceed3"
+                                                onclick="javascript: location.href = '/cart/checkout'">
+                                                <div id="slideCartProceed2"></div>
+                                                <a href="/cart/checkout">Continue</a>
+                                            </div>
                                         </div>
 
-                        </div>
+                                        <% } %>
+
+                                            <% if (cart.length==1) { %>
+
+                                                <div class="cartSummary2 pt-4">
+
+                                                    <% } %>
+
+                                                        <% if (cart.length> 1) { %>
+
+                                                            <div class="cartSummary2 mt-4 pt-4">
+
+                                                                <% } %>
+                                                                    <h2 class="text-center">COMPLIMENTARY DELIVERY</h2>
+                                                                    <hr>
+                                                                    <h3>May we help?</h3>
+
+                                                                    <p> <i class="fas fa-phone-alt footerIcon"></i><a
+                                                                            href="#" class="contrast">
+                                                                            +359
+                                                                            890 136
+                                                                            562</a> </p>
+
+                                                                    <p> <i class="far fa-envelope footerIcon"></i><a
+                                                                            href="#" class="contrast">
+                                                                            sales@unixo.com </a> </p>
+                                                                    <hr style="margin-top: 20px;">
+
+                                                                    <h3>Delivery</h3>
+
+                                                                    <p style="display: inline-block;">DHL Express</p>
+                                                                    <p
+                                                                        style="float:right; display:inline-block; margin-bottom: 0; margin-right: 15px">
+                                                                        $0.00</p>
+                                                                    <hr style="margin-top: 20px;">
+
+                                                                    <h3>Payment</h3>
+
+                                                                    <p
+                                                                        style="display: inline-block; margin-bottom: 25px;">
+                                                                        Cash on Delivery
+                                                                    </p>
+                                                            </div>
+
+                                                </div>
+
+                                </div>
 
 
 
 
-                        <script>
+                                <script>
 
 
 
 
 
-                        </script>
+                                </script>

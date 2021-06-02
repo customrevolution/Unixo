@@ -124,7 +124,7 @@ let setCountdown = function (countDate, elementClassName) {
     }, 1000);
 }
 
-setCountdown('May 31, 2021 20:30:00', '.collectionTimer');
+setCountdown('June 10, 2021 20:30:00', '.collectionTimer');
 
 if (mediaMin768.matches) {
     shopItem[i].classList.remove('mx-auto');
