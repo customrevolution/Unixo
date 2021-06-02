@@ -33,14 +33,17 @@ if (!window.matchMedia("(min-width: 992px)").matches) {
         shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
     }
 
-    if (window.matchMedia("(min-width: 1114px")) {
-        shopShowBackground.style = `height: ${shopShowRowHeight + 250}px !important`
-        shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
-    }
 }
 
 if (window.matchMedia("(min-width: 992px)").matches) {
+    shopShowBackground.style = `height: ${shopShowRowHeight + 450}px !important`
 
+    shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
+}
+
+
+if (window.matchMedia("(min-width: 1114px")) {
+    shopShowBackground.style = `height: ${shopShowRowHeight + 100}px !important`
     shopShowContainer.style = `height: ${shopShowBackground.clientHeight}px !important`;
 }
 

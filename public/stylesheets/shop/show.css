@@ -198,10 +198,6 @@
 
 
 
-.swiperKicksMobile {
-    min-height: 450px;
-    object-fit: cover;
-}
 
 
 .mySwiper {
@@ -922,8 +918,24 @@
 }
 
 @media (min-width: 350px) {
+    .mySwiperKicks {
+        height: 370px !important;
+    }
+}
+
+@media (min-width: 500px) {
+    .mySwiperKicks {
+        height: 500px !important;
+    }
+}
+
+@media (min-width: 630px) {
+    .mySwiperKicks {
+        height: 500px !important;
+    }
+
     .swiperKicksMobile {
-        height: 550px;
+        object-fit: cover !important;
     }
 }
 
@@ -1327,9 +1339,14 @@
 }
 
 .mySwiperKicks {
-
     width: 100%;
+    height: 350px;
 }
+
+.swiperKicksMobile {
+    object-fit: scale-down;
+}
+
 
 .swiper-slide {
     text-align: center;
