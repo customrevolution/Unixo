@@ -1,6 +1,6 @@
 <h1>Unixo</h1>
 <p>This project is a ecommerce website that showcases and sells custom sneakers.</p>
-<p>Each sneaker is in a collection of Its own and the collection changes every week.</p>
+<p>Each sneaker is in a collection of Its own and the collections change every week.</p>
 
 
 <h2>How to check out the project</h2>
