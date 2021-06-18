@@ -166,11 +166,11 @@
                 let minutes2 = minutes;
                 let seconds2 = seconds;
 
-                let days3 = 'ден', hours3 = 'час', minutes3 = 'минута';
+                let days3 = 'day', hours3 = 'hour', minutes3 = 'minute';
 
-                if (days2 > 1) days3 = 'дни'
-                if (hours2 > 1 || hours2 == 0) hours3 = 'часа'
-                if (minutes2 > 1) minutes3 = 'минути'
+                if (days2 > 1) days3 = 'days'
+                if (hours2 > 1 || hours2 == 0) hours3 = 'hours'
+                if (minutes2 > 1) minutes3 = 'minutes'
 
                 days = days.toLocaleString('en-US', {
                     minimumIntegerDigits: 2,
@@ -195,7 +195,7 @@
 
                 // Display the result in the element with id="demo"
                 document.querySelector(elementClassName).innerHTML = `<span class="timerBox">${days}</span> <span class= "clockColon">:</span> <span class="timerBox">${hours}</span> <span class= "clockColon">:</span> <span class="timerBox">${minutes}</span> <span class= "clockColon">:</span> <span class="timerBox">${seconds}</span>`;
-                document.querySelector('.collectionTimerText').innerHTML = `${days2} ${days3}, ${hours2} ${hours3}, ${minutes2} ${minutes3}, ${seconds2} секунди <br> до новата колекция!`;
+                document.querySelector('.collectionTimerText').innerHTML = `${days2} ${days3}, ${hours2} ${hours3}, ${minutes2} ${minutes3}, ${seconds2} seconds <br> until the new collection!`;
 
                 // If the count down is finished, write some text
                 if (distance < 0) {
@@ -205,7 +205,7 @@
             }, 1000);
         }
 
-        setCountdown('June 10, 2021 20:30:00', '.collectionTimer');
+        setCountdown('June 30, 2021 20:30:00', '.collectionTimer');
 
         if (mediaMin768.matches) {
             shopItem[i].classList.remove('mx-auto');
